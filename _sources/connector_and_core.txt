@@ -29,6 +29,10 @@ Each core exports its IO to slice cards via two 36-position PCIe connectors as s
 
 The connectors are named <slot>_<xcore_number>_<connector_number>.
 
+XTAG Connection
+---------------
+
+Standard XMOS debug functionality is provided via a normal XTAG2 which connects to the set of PCIe teeth labeled as 'Plug_00' in the preceeding diagram via a simple conversion connector (supplied with the coard board) which maps the XTAG2 XSYS header to the plug_00 teeth. 
 
 Slice Connector Compatibility and Restrictions
 ----------------------------------------------

@@ -85,6 +85,10 @@ document.getElementById('d1').style.height=h2 + "px";
 Each core exports its IO to slice cards via two 36-position PCIe connectors as shown below. Note that the connectors each have two sides (A, corresponding to the teeth on the top of the slice PCB and B, connecting to teeth on the bottom side of the slice PCB).</p>
 <p>The connectors are named &lt;slot&gt;_&lt;xcore_number&gt;_&lt;connector_number&gt;.</p>
 </div>
+<div class="section" id="xtag-connection">
+<h2>XTAG Connection<a class="headerlink" href="#xtag-connection" title="Permalink to this headline">¶</a></h2>
+<p>Standard XMOS debug functionality is provided via a normal XTAG2 which connects to the set of PCIe teeth labeled as &#8216;Plug_00&#8217; in the preceeding diagram via a simple conversion connector (supplied with the coard board) which maps the XTAG2 XSYS header to the plug_00 teeth.</p>
+</div>
 <div class="section" id="slice-connector-compatibility-and-restrictions">
 <h2>Slice Connector Compatibility and Restrictions<a class="headerlink" href="#slice-connector-compatibility-and-restrictions" title="Permalink to this headline">¶</a></h2>
 <p>Note that connectors 0 and 1 are compatible in terms of port connectivity, in that 0 is a subset of 1 in terms of ports. This means that any slice card which is compatible with 0, would also work when connected via 1. Therefore slice cards which work via connector 0 are the most versatile, but slices needing more than 4 1b ports can be designed to fit only in COnnector number 1.</p>
@@ -128,6 +132,7 @@ a connector does not bring out JTAG, all parenthesised pins should be NC.</p>
 <li class="toctree-l2"><a class="reference internal" href="#card-edge-port-io-to-slices">Card Edge Port IO to Slices</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#other-connector-io">Other Connector IO</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#power-supply">Power Supply</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#xtag-connection">XTAG Connection</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#slice-connector-compatibility-and-restrictions">Slice Connector Compatibility and Restrictions</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#port-8d">Port 8D</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slice-clocking">Slice Clocking</a></li>
