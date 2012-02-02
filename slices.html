@@ -1,0 +1,181 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Slices &mdash; Slicekit System Overview v0v1 documentation</title>
+    <link rel="stylesheet" href="_static/xdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0v1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://mathjax.connectmv.com/MathJax.js"></script>
+    <script type="text/javascript" src="_static/xcomment.js"></script>
+    <link rel="top" title="Slicekit System Overview v0v1 documentation" href="index.html" />
+    <link rel="next" title="Applications" href="applications.html" />
+    <link rel="prev" title="Core System Overview" href="connector_and_core.html" /> 
+
+<script>
+function setheight() {
+h1 = document.getElementById('d1').style.height;
+h2 = document.getElementById('d2').style.height;
+
+if (parseInt(h1) > parseInt(h2)) {
+document.getElementById('d2').style.height=h1 + "px";
+}
+else {
+document.getElementById('d1').style.height=h2 + "px";
+}
+
+}
+</script>
+</head>
+
+<body onload="setheight();">
+
+  
+
+    <div class="document" id='d1'>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div style="float: right">
+<a href="connector_and_core.html"
+                        title="previous chapter"> &lt&lt </a>
+<a href="applications.html"
+                        title="next chapter"> &gt&gt </a></p>
+</div>
+
+            
+  <div class="section" id="slices">
+<h1>Slices<a class="headerlink" href="#slices" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="form-factor">
+<h2>Form factor<a class="headerlink" href="#form-factor" title="Permalink to this headline">¶</a></h2>
+<p>Slices are daughtercards which have gold plated PCI connector pads so as to connect to one or two of the edge connectors on the core board. Most slices have minimal component count, with the overall size of the slice card being mainly determined by whether the IO requirements require the use of both X and Y connectors, and the amount of other connectors is requires (e.g. for USB, ethernet, audio, headers, modules and so on).</p>
+<p>Accordingly Slices are defined in one of five forms as follows</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="6%" />
+<col width="15%" />
+<col width="21%" />
+<col width="58%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Form</th>
+<th class="head">Slots Used</th>
+<th class="head">Form Factor</th>
+<th class="head">Approximate Dimensions(when plugged in)</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>A</td>
+<td>1</td>
+<td>Half Length</td>
+<td>38mm x 24mm</td>
+</tr>
+<tr><td>B</td>
+<td>1</td>
+<td>Full Length</td>
+<td>38mm x 56mm</td>
+</tr>
+<tr><td>C</td>
+<td>1</td>
+<td>Double Length</td>
+<td>38mm x 100mm</td>
+</tr>
+<tr><td>D</td>
+<td>2</td>
+<td>Half Length</td>
+<td>80mm x 24mm</td>
+</tr>
+<tr><td>E</td>
+<td>2</td>
+<td>Full Length</td>
+<td>80mm x 45mm</td>
+</tr>
+</tbody>
+</table>
+<p>The diagram below shows the five slice forms and how they relate to the core boards.</p>
+<blockquote>
+<div><div class="figure">
+<img alt="_images/baseboards.png" src="_images/baseboards.png" />
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="costs">
+<h2>Costs<a class="headerlink" href="#costs" title="Permalink to this headline">¶</a></h2>
+<p>Most slice cards will be easily implemented in two layers, using simple University or hobbyiest PCB manufacturing facilities, although there may be occcasions when many components need to be crammed into a small space of complex chips are used in which case four layer slice cards can be used. No connectors are needed, and unless many insertions are planned there wouldn&#8217;t be any need to use hard gold plating for the connector pads.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p>The diagram below shows a variety of example slicecards.</p>
+<blockquote>
+<div><div class="figure">
+<img alt="_images/slices.png" src="_images/slices.png" />
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="stacked-slices">
+<h2>Stacked Slices<a class="headerlink" href="#stacked-slices" title="Permalink to this headline">¶</a></h2>
+<p>There is nothing to stop slices from having their own shields, as shown in the diagram above (generic accessory slice with a capactiive touch shield on top).</p>
+</div>
+</div>
+
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" id='d2'>
+        <div class="sphinxsidebarwrapper">
+<h3><a href="index.html">Slicekit System Overview (0v1)</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="connector_and_core.html">Core System Overview</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Slices</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#form-factor">Form factor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#costs">Costs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#examples">Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#stacked-slices">Stacked Slices</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="applications.html">Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="applications.html#other-documents">Other Documents</a></li>
+</ul>
+
+<div id="searchbox" style="display: none;margin-bottom: 10px;">
+  <h3>Search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+
+
+    <div class="footer">
+    </div>
+  </body>
+</html>
+
+
+

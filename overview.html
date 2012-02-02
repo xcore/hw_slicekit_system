@@ -1,0 +1,148 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Overview &mdash; Slicekit System Overview v0v1 documentation</title>
+    <link rel="stylesheet" href="_static/xdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0v1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://mathjax.connectmv.com/MathJax.js"></script>
+    <script type="text/javascript" src="_static/xcomment.js"></script>
+    <link rel="top" title="Slicekit System Overview v0v1 documentation" href="index.html" />
+    <link rel="next" title="Core System Overview" href="connector_and_core.html" />
+    <link rel="prev" title="Slicekit Specification" href="index.html" /> 
+
+<script>
+function setheight() {
+h1 = document.getElementById('d1').style.height;
+h2 = document.getElementById('d2').style.height;
+
+if (parseInt(h1) > parseInt(h2)) {
+document.getElementById('d2').style.height=h1 + "px";
+}
+else {
+document.getElementById('d1').style.height=h2 + "px";
+}
+
+}
+</script>
+</head>
+
+<body onload="setheight();">
+
+  
+
+    <div class="document" id='d1'>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div style="float: right">
+<a href="index.html"
+                        title="previous chapter"> &lt&lt </a>
+<a href="connector_and_core.html"
+                        title="next chapter"> &gt&gt </a></p>
+</div>
+
+            
+  <div class="section" id="overview">
+<h1>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h1>
+<p>This document gives an overview of the XMOS modular development hardware platform. The system is based on a series of standard core boards which export the IO of one or more xcores, using two 36-pin card-edge PCI express connectors per core, into which add on boards (hereafter called slices) are plugged. The core boards can be chained together using some of these connectors where multi-core systems are required. Provision for attaching an XTAG2 debug adapter to the system of core boards is provided, along with power supplies, testpoints and so on.</p>
+<div class="figure">
+<img alt="_images/basicboard.png" src="_images/basicboard.png" />
+</div>
+<p>The two connectors (denoted 0 and 1) available to each xcore export the following capabilities:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="42%" />
+<col width="29%" />
+<col width="29%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Resource</th>
+<th class="head">Conn. 0</th>
+<th class="head">Conn. 1</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>1b ports</td>
+<td>4</td>
+<td>12</td>
+</tr>
+<tr><td>8b ports</td>
+<td>2</td>
+<td>2</td>
+</tr>
+<tr><td>5b xlinks</td>
+<td>2</td>
+<td>0</td>
+</tr>
+<tr><td>JTAG</td>
+<td>yes</td>
+<td>no</td>
+</tr>
+</tbody>
+</table>
+<p>Additionally, the core boards export connector 0 for xcore0 to a 36-pin PCI express compatible row of teeth.</p>
+<p>What this means is that:</p>
+<ul class="simple">
+<li>An xcore can control two separate slices (one via connector 0 and one via connector 1) each having moderate IO requirements.</li>
+<li>An xcore  can control a single slices each having a higher IO requirement using both 0 and 1 connectors.</li>
+<li>To link two core boards together, the connector 0 teeth can be plugged into the connector 0 slot on another baseboard, giving two 5b links between the two core boards along with the full complement of JTAG signals.</li>
+</ul>
+</div>
+
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" id='d2'>
+        <div class="sphinxsidebarwrapper">
+<h3><a href="index.html">Slicekit System Overview (0v1)</a></h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="connector_and_core.html">Core System Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="slices.html">Slices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="applications.html">Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="applications.html#other-documents">Other Documents</a></li>
+</ul>
+
+<div id="searchbox" style="display: none;margin-bottom: 10px;">
+  <h3>Search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+
+
+    <div class="footer">
+    </div>
+  </body>
+</html>
+
+
+

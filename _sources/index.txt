@@ -1,0 +1,10 @@
+Slicekit Specification
+======================
+
+.. toctree::
+
+   overview
+   connector_and_core
+   slices
+   applications
+

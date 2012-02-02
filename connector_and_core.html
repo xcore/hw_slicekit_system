@@ -1,0 +1,168 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Core System Overview &mdash; Slicekit System Overview v0v1 documentation</title>
+    <link rel="stylesheet" href="_static/xdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0v1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://mathjax.connectmv.com/MathJax.js"></script>
+    <script type="text/javascript" src="_static/xcomment.js"></script>
+    <link rel="top" title="Slicekit System Overview v0v1 documentation" href="index.html" />
+    <link rel="next" title="Slices" href="slices.html" />
+    <link rel="prev" title="Overview" href="overview.html" /> 
+
+<script>
+function setheight() {
+h1 = document.getElementById('d1').style.height;
+h2 = document.getElementById('d2').style.height;
+
+if (parseInt(h1) > parseInt(h2)) {
+document.getElementById('d2').style.height=h1 + "px";
+}
+else {
+document.getElementById('d1').style.height=h2 + "px";
+}
+
+}
+</script>
+</head>
+
+<body onload="setheight();">
+
+  
+
+    <div class="document" id='d1'>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div style="float: right">
+<a href="overview.html"
+                        title="previous chapter"> &lt&lt </a>
+<a href="slices.html"
+                        title="next chapter"> &gt&gt </a></p>
+</div>
+
+            
+  <div class="section" id="core-system-overview">
+<h1>Core System Overview<a class="headerlink" href="#core-system-overview" title="Permalink to this headline">¶</a></h1>
+<p>The core board is similar in function to an XK-1, with the addition of the the PCIe edge connectors to replace the XK-1 IDC headers. This provides for a good deal more IO connectivity at the expense of a larger PCB.</p>
+<div class="section" id="card-edge-port-io-to-slices">
+<h2>Card Edge Port IO to Slices<a class="headerlink" href="#card-edge-port-io-to-slices" title="Permalink to this headline">¶</a></h2>
+<p>The port connections to the connectors are chosen to satisfy the following constraints:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Two full 5b xlinks must be available on slot number 0 enabling multiple core boards to be chained together with reasonable inter-chip link bandwidth.</li>
+<li>The JTAG signals and the debug pin must be available on slot number 0 enabling multiple core boards to be chained together for debug.</li>
+<li>Slot number 0 must have at least 4 1b ports on it to enable basic functions to fit in slot 0.</li>
+<li>For higher speed parallel interfaces like ULPI, Transport stream and SDRAM, 1 GND is required for every 4 or 5 signal pins. Note that they probably also need to spaced more evenly but the assignment of functions to pins above can be altered during detailed design as long as the connector still has all the connections listed above.</li>
+</ol>
+</div></blockquote>
+</div>
+<div class="section" id="other-connector-io">
+<h2>Other Connector IO<a class="headerlink" href="#other-connector-io" title="Permalink to this headline">¶</a></h2>
+<p>The slots also export the core board reset signal and the core board reference clock so that slicecards can make use of these functions to avoid component duplication where possible.</p>
+</div>
+<div class="section" id="power-supply">
+<h2>Power Supply<a class="headerlink" href="#power-supply" title="Permalink to this headline">¶</a></h2>
+<p>Each core board has a 5V power jack. 5V and 3V3 suuplies are be generated from DC-DCs from this main supply and then distributed to all slice connectors. Slices needing core supplies below 3V3 should generate them themselves from the 5V supply to the slice. The core board will generate 1V for the XS1-L.</p>
+<p>Slices will have a power budget of approximately 2W each.
+Each core exports its IO to slice cards via two 36-position PCIe connectors as shown below. Note that the connectors each have two sides (A, corresponding to the teeth on the top of the slice PCB and B, connecting to teeth on the bottom side of the slice PCB).</p>
+<p>The connectors are named &lt;slot&gt;_&lt;xcore_number&gt;_&lt;connector_number&gt;.</p>
+</div>
+<div class="section" id="slice-connector-compatibility-and-restrictions">
+<h2>Slice Connector Compatibility and Restrictions<a class="headerlink" href="#slice-connector-compatibility-and-restrictions" title="Permalink to this headline">¶</a></h2>
+<p>Note that connectors 0 and 1 are compatible in terms of port connectivity, in that 0 is a subset of 1 in terms of ports. This means that any slice card which is compatible with 0, would also work when connected via 1. Therefore slice cards which work via connector 0 are the most versatile, but slices needing more than 4 1b ports can be designed to fit only in COnnector number 1.</p>
+<p>Slices with even larger IO requirements can use both connectors at once in which case it will end up using all the IO of one core and have the full cmoplement of ports available for the slicecard.</p>
+<div class="section" id="port-8d">
+<h3>Port 8D<a class="headerlink" href="#port-8d" title="Permalink to this headline">¶</a></h3>
+<p>P8D[4:7] is not bonded out on the secondary core of an L2. Slices should avoid where possible using 8D[4:7] and 8B[4:7]. Where this is not possible, such slices will not be compatible with slot 1_1.</p>
+</div>
+<div class="section" id="slice-clocking">
+<h3>Slice Clocking<a class="headerlink" href="#slice-clocking" title="Permalink to this headline">¶</a></h3>
+<p>CLK is a fixed 25 MHz reference clock generated by an crystal oscillator on the core board which is the default reference clock for the XMOS chip and is distributed to all slicecards via the CLK pin. Slices can use this clock or generate their own.</p>
+</div>
+<div class="section" id="slice-power-supply">
+<h3>Slice Power Supply<a class="headerlink" href="#slice-power-supply" title="Permalink to this headline">¶</a></h3>
+<p>Both slots have 5V, 3V3, and GND. 5V, 3V3 and GND.</p>
+</div>
+</div>
+<div class="section" id="chaining-core-boards-via-xlinks">
+<h2>Chaining Core Boards via XLINKS<a class="headerlink" href="#chaining-core-boards-via-xlinks" title="Permalink to this headline">¶</a></h2>
+<p>Connector 0 is special because it brings out the JTAG signals and because two 5-wire xlinks
+overlay the ports selected for inclusion on connector 0, this means that connector 0
+can be used for connecting multiple core boards together. A jumper (or
+similar) willbe present to enable TDI and TDO to be shorted when no card is plugged in. If
+a connector does not bring out JTAG, all parenthesised pins should be NC.</p>
+<p>All core boards export the IO from xcore0 to both connector 0 (as above) but also to an adjacent set of connector compatible teeth marked &#8216;chain&#8217; in the diagram above. An example of an L2 core board as an xlink boot master to a connected L1 core board is shown below. Two L1 or twi L2 boards could be similarly connected.</p>
+<p>Lastly, provision will be made to pass the 12V supply from the primary board to a suitable connection on the secondary board so that two bricks are not required.</p>
+</div>
+</div>
+
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" id='d2'>
+        <div class="sphinxsidebarwrapper">
+<h3><a href="index.html">Slicekit System Overview (0v1)</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Core System Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#card-edge-port-io-to-slices">Card Edge Port IO to Slices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#other-connector-io">Other Connector IO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#power-supply">Power Supply</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#slice-connector-compatibility-and-restrictions">Slice Connector Compatibility and Restrictions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#port-8d">Port 8D</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#slice-clocking">Slice Clocking</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#slice-power-supply">Slice Power Supply</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#chaining-core-boards-via-xlinks">Chaining Core Boards via XLINKS</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="slices.html">Slices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="applications.html">Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="applications.html#other-documents">Other Documents</a></li>
+</ul>
+
+<div id="searchbox" style="display: none;margin-bottom: 10px;">
+  <h3>Search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+
+
+    <div class="footer">
+    </div>
+  </body>
+</html>
+
+
+
