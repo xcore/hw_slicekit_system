@@ -1,0 +1,526 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>STAR, SQUARE SLOT Pinout &mdash; XA-SK-UART-8: Multi-UART Slice Card v documentation</title>
+    <link rel="stylesheet" href="_static/xdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/xcomment.js"></script>
+    <link rel="top" title="XA-SK-UART-8: Multi-UART Slice Card v documentation" href="index.html" />
+    <link rel="next" title="Collateral" href="collateral.html" />
+    <link rel="prev" title="Slice Card Overview" href="overview.html" /> 
+
+<script>
+function setheight() {
+h1 = document.getElementById('d1').style.height;
+h2 = document.getElementById('d2').style.height;
+
+if (parseInt(h1) > parseInt(h2)) {
+document.getElementById('d2').style.height=h1 + "px";
+}
+else {
+document.getElementById('d1').style.height=h2 + "px";
+}
+
+}
+</script>
+</head>
+
+<body onload="setheight();">
+
+  
+
+    <div class="document" id='d1'>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div style="float: right">
+<a href="overview.html"
+                        title="previous chapter"> &lt&lt </a>
+<a href="collateral.html"
+                        title="next chapter"> &gt&gt </a></p>
+</div>
+
+            
+  <div class="section" id="star-square-slot-pinout">
+<h1>STAR, SQUARE SLOT Pinout<a class="headerlink" href="#star-square-slot-pinout" title="Permalink to this headline">¶</a></h1>
+<p>Star   = XCoreTile #0
+Square = XCoreTile #1</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="11%" />
+<col width="27%" />
+<col width="16%" />
+<col width="27%" />
+<col width="19%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">pin</th>
+<th class="head" colspan="2">Side B (Top)</th>
+<th class="head" colspan="2">Side A (Bottom)</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>&nbsp;</td>
+<td>Function</td>
+<td>Port</td>
+<td>Function</td>
+<td>Port</td>
+</tr>
+<tr><td>1</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr><td>2</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>5V</td>
+<td>&nbsp;</td>
+</tr>
+<tr><td>3</td>
+<td>GND</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr><td>4</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr><td>5</td>
+<td>3V3</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr><td>6</td>
+<td>RXD0</td>
+<td>8A0</td>
+<td>RXD6</td>
+<td>8A6</td>
+</tr>
+<tr><td>7</td>
+<td>RXD1</td>
+<td>8A1</td>
+<td>RXD7</td>
+<td>8A7</td>
+</tr>
+<tr><td>8</td>
+<td>GND</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr><td>9</td>
+<td>RXD2</td>
+<td>8A2</td>
+<td>RXD4</td>
+<td>8A4</td>
+</tr>
+<tr><td>10</td>
+<td>&nbsp;</td>
+<td>1C</td>
+<td>GND</td>
+<td>&nbsp;</td>
+</tr>
+<tr><td>11</td>
+<td>RXD3</td>
+<td>8A3</td>
+<td>RXD5</td>
+<td>8A5</td>
+</tr>
+<tr><td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr><td>12</td>
+<td>TXD0</td>
+<td>8B0</td>
+<td>TXD6</td>
+<td>8B6</td>
+</tr>
+<tr><td>13</td>
+<td>TXD1</td>
+<td>8B1</td>
+<td>TXD7</td>
+<td>8B7</td>
+</tr>
+<tr><td>14</td>
+<td>CLK</td>
+<td>&nbsp;</td>
+<td>GND</td>
+<td>&nbsp;</td>
+</tr>
+<tr><td>15</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>CLK_OUT</td>
+<td>1F</td>
+</tr>
+<tr><td>16</td>
+<td>GND</td>
+<td>&nbsp;</td>
+<td>RST_N</td>
+<td>&nbsp;</td>
+</tr>
+<tr><td>17</td>
+<td>TXD2</td>
+<td>8B2</td>
+<td>TXD4</td>
+<td>8B5</td>
+</tr>
+<tr><td>18</td>
+<td>TXD3</td>
+<td>8B3</td>
+<td>TXD5</td>
+<td>8B6</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="triangle-slot-pinout">
+<h1>TRIANGLE SLOT Pinout<a class="headerlink" href="#triangle-slot-pinout" title="Permalink to this headline">¶</a></h1>
+<p>Triangle = XCore Tile: 0</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="11%" />
+<col width="27%" />
+<col width="16%" />
+<col width="27%" />
+<col width="19%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">pin</th>
+<th class="head" colspan="2">Side B (Top)</th>
+<th class="head" colspan="2">Side A (Bottom)</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>&nbsp;</td>
+<td>Function</td>
+<td>Port</td>
+<td>Function</td>
+<td>Port</td>
+</tr>
+<tr><td>1</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr><td>2</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>5V</td>
+<td>&nbsp;</td>
+</tr>
+<tr><td>3</td>
+<td>GND</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr><td>4</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr><td>5</td>
+<td>3V3</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr><td>6</td>
+<td>RXD0</td>
+<td>8C0</td>
+<td>RXD6</td>
+<td>8C6</td>
+</tr>
+<tr><td>7</td>
+<td>RXD1</td>
+<td>8C1</td>
+<td>RXD7</td>
+<td>8C7</td>
+</tr>
+<tr><td>8</td>
+<td>GND</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr><td>9</td>
+<td>RXD2</td>
+<td>8C2</td>
+<td>RXD4</td>
+<td>8C4</td>
+</tr>
+<tr><td>10</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>GND</td>
+<td>&nbsp;</td>
+</tr>
+<tr><td>11</td>
+<td>RXD3</td>
+<td>8C3</td>
+<td>RXD5</td>
+<td>8C5</td>
+</tr>
+<tr><td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr><td>12</td>
+<td>TXD0</td>
+<td>8D0</td>
+<td>TXD6</td>
+<td>8D6</td>
+</tr>
+<tr><td>13</td>
+<td>TXD1</td>
+<td>8D1</td>
+<td>TXD7</td>
+<td>8D7</td>
+</tr>
+<tr><td>14</td>
+<td>CLK</td>
+<td>&nbsp;</td>
+<td>GND</td>
+<td>&nbsp;</td>
+</tr>
+<tr><td>15</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>CLK_OUT</td>
+<td>1L</td>
+</tr>
+<tr><td>16</td>
+<td>GND</td>
+<td>&nbsp;</td>
+<td>RST_N</td>
+<td>&nbsp;</td>
+</tr>
+<tr><td>17</td>
+<td>TXD2</td>
+<td>8D2</td>
+<td>TXD4</td>
+<td>8D5</td>
+</tr>
+<tr><td>18</td>
+<td>TXD3</td>
+<td>8D3</td>
+<td>TXD5</td>
+<td>8D6</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="circle-slot-pinout">
+<h1>CIRCLE SLOT Pinout<a class="headerlink" href="#circle-slot-pinout" title="Permalink to this headline">¶</a></h1>
+<p>Circle = XCore Tile: 0</p>
+<p>Not fully compatible. Designs requiring 4 uarts or less can use it as follows:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="11%" />
+<col width="27%" />
+<col width="16%" />
+<col width="27%" />
+<col width="19%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">pin</th>
+<th class="head" colspan="2">Side B (Top)</th>
+<th class="head" colspan="2">Side A (Bottom)</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>&nbsp;</td>
+<td>Function</td>
+<td>Port</td>
+<td>Function</td>
+<td>Port</td>
+</tr>
+<tr><td>1</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr><td>2</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>5V</td>
+<td>&nbsp;</td>
+</tr>
+<tr><td>3</td>
+<td>GND</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr><td>4</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr><td>5</td>
+<td>3V3</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr><td>6</td>
+<td>RXD0</td>
+<td>8C0</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr><td>7</td>
+<td>RXD1</td>
+<td>8C1</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr><td>8</td>
+<td>GND</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr><td>9</td>
+<td>RXD2</td>
+<td>8C2</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr><td>10</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>GND</td>
+<td>&nbsp;</td>
+</tr>
+<tr><td>11</td>
+<td>RXD3</td>
+<td>8C3</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr><td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr><td>12</td>
+<td>TXD0</td>
+<td>8D0</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr><td>13</td>
+<td>TXD1</td>
+<td>8D1</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr><td>14</td>
+<td>CLK</td>
+<td>&nbsp;</td>
+<td>GND</td>
+<td>&nbsp;</td>
+</tr>
+<tr><td>15</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>CLK_OUT</td>
+<td>1L</td>
+</tr>
+<tr><td>16</td>
+<td>GND</td>
+<td>&nbsp;</td>
+<td>RST_N</td>
+<td>&nbsp;</td>
+</tr>
+<tr><td>17</td>
+<td>TXD2</td>
+<td>8D2</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr><td>18</td>
+<td>TXD3</td>
+<td>8D3</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" id='d2'>
+        <div class="sphinxsidebarwrapper">
+<h3><a href="index.html">XA-SK-UART-8: Multi-UART Slice Card</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Slice Card Overview</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">STAR, SQUARE SLOT Pinout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#triangle-slot-pinout">TRIANGLE SLOT Pinout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#circle-slot-pinout">CIRCLE SLOT Pinout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collateral.html">Collateral</a></li>
+</ul>
+
+<div id="searchbox" style="display: none;margin-bottom: 10px;">
+  <h3>Search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+
+
+    <div class="footer">
+    </div>
+  </body>
+</html>
+
+
+
