@@ -1,4 +1,3 @@
-  
 XA-SK-GPIO: General Purpose IO Slice Card
 -----------------------------------------
 

@@ -1,4 +1,4 @@
-  Slice Card Overview
+Slice Card Overview
 ===================
 
 Pack Contents
