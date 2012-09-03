@@ -1,0 +1,456 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Slicekit System Pins &mdash; XA-SK-GPIO: General Purpose IO Slice Card v documentation</title>
+    <link rel="stylesheet" href="_static/xdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/xcomment.js"></script>
+    <link rel="top" title="XA-SK-GPIO: General Purpose IO Slice Card v documentation" href="index.html" />
+    <link rel="next" title="Collateral" href="collateral.html" />
+    <link rel="prev" title="Slice Card Overview" href="overview.html" /> 
+
+<script>
+function setheight() {
+h1 = document.getElementById('d1').style.height;
+h2 = document.getElementById('d2').style.height;
+
+if (parseInt(h1) > parseInt(h2)) {
+document.getElementById('d2').style.height=h1 + "px";
+}
+else {
+document.getElementById('d1').style.height=h2 + "px";
+}
+
+}
+</script>
+</head>
+
+<body onload="setheight();">
+
+  
+
+    <div class="document" id='d1'>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div style="float: right">
+<a href="overview.html"
+                        title="previous chapter"> &lt&lt </a>
+<a href="collateral.html"
+                        title="next chapter"> &gt&gt </a></p>
+</div>
+
+            
+  <div class="section" id="slicekit-system-pins">
+<h1>Slicekit System Pins<a class="headerlink" href="#slicekit-system-pins" title="Permalink to this headline">¶</a></h1>
+<p>These system functions are common between all slices regardless of type, acces to this functionality varies depending on which slot is employed.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="21%" />
+<col width="9%" />
+<col width="9%" />
+<col width="9%" />
+<col width="9%" />
+<col width="43%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Function</th>
+<th class="head">STAR</th>
+<th class="head">TRIANGLE</th>
+<th class="head">SQUARE</th>
+<th class="head">CIRCLE</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>DEBUG</td>
+<td>NC</td>
+<td>NC</td>
+<td>B1</td>
+<td>NC</td>
+<td>DEBUG pin from XTAG</td>
+</tr>
+<tr><td>TCK</td>
+<td>NC</td>
+<td>NC</td>
+<td>B2</td>
+<td>NC</td>
+<td>JTAG clock from XTAG</td>
+</tr>
+<tr><td>TMS</td>
+<td>NC</td>
+<td>NC</td>
+<td>A3</td>
+<td>NC</td>
+<td>JTAG test mode select from XTAG</td>
+</tr>
+<tr><td>TDO</td>
+<td>NC</td>
+<td>NC</td>
+<td>A4</td>
+<td>NC</td>
+<td>JTAG chain from XTAG</td>
+</tr>
+<tr><td>TDI</td>
+<td>NC</td>
+<td>NC</td>
+<td>B4</td>
+<td>NC</td>
+<td>JTAG chain from XTAG</td>
+</tr>
+<tr><td>MSEL</td>
+<td>NC</td>
+<td>NC</td>
+<td>A1</td>
+<td>NC</td>
+<td>Boot Mode Select from XTAG</td>
+</tr>
+<tr><td>RST_N</td>
+<td>A16</td>
+<td>A16</td>
+<td>A16</td>
+<td>A16</td>
+<td>System Reset supplied from Core Board</td>
+</tr>
+<tr><td>CLK</td>
+<td>B14</td>
+<td>B14</td>
+<td>B14</td>
+<td>B14</td>
+<td>20 MHz clock Supplied from Core Board</td>
+</tr>
+<tr><td>5V</td>
+<td>A2</td>
+<td>A2</td>
+<td>A2</td>
+<td>A2</td>
+<td>5 Volts supplied from Core Board</td>
+</tr>
+<tr><td>3V3</td>
+<td>B5</td>
+<td>B5</td>
+<td>B5</td>
+<td>B5</td>
+<td>3 Volts supplied from Core Board</td>
+</tr>
+<tr><td>GND</td>
+<td>B3</td>
+<td>B3</td>
+<td>B3</td>
+<td>B3</td>
+<td>Ground supplied from Core Board</td>
+</tr>
+<tr><td>GND</td>
+<td>A5</td>
+<td>A5</td>
+<td>A5</td>
+<td>A5</td>
+<td>Ground supplied from Core Board</td>
+</tr>
+<tr><td>GND</td>
+<td>B8</td>
+<td>B8</td>
+<td>B8</td>
+<td>B8</td>
+<td>Ground supplied from Core Board</td>
+</tr>
+<tr><td>GND</td>
+<td>A10</td>
+<td>A10</td>
+<td>A10</td>
+<td>A10</td>
+<td>Ground supplied from Core Board</td>
+</tr>
+<tr><td>GND</td>
+<td>B16</td>
+<td>B16</td>
+<td>B16</td>
+<td>B16</td>
+<td>Ground supplied from Core Board</td>
+</tr>
+<tr><td>GND</td>
+<td>A14</td>
+<td>A14</td>
+<td>A14</td>
+<td>A14</td>
+<td>Ground supplied from Core Board</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="xa-sk-gpio-functional-pins">
+<h1>XA-SK-GPIO Functional Pins<a class="headerlink" href="#xa-sk-gpio-functional-pins" title="Permalink to this headline">¶</a></h1>
+<p>This table shows the port mapping for each of the Slice Card Signal IO, and the Slicekit Slot connector pin it is located on.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="21%" />
+<col width="10%" />
+<col width="9%" />
+<col width="9%" />
+<col width="9%" />
+<col width="7%" />
+<col width="35%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Function</th>
+<th class="head">STAR</th>
+<th class="head">TRIANGLE</th>
+<th class="head">SQUARE</th>
+<th class="head">CIRCLE</th>
+<th class="head">PIN</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>GPIO_0</td>
+<td>NC</td>
+<td>1A</td>
+<td>NC</td>
+<td>1A</td>
+<td>B2</td>
+<td>1 Bit port free for GPIO</td>
+</tr>
+<tr><td>GPIO_1</td>
+<td>NC</td>
+<td>1D</td>
+<td>NC</td>
+<td>1D</td>
+<td>B4</td>
+<td>1 Bit port free for GPIO</td>
+</tr>
+<tr><td>GPIO_2</td>
+<td>NC</td>
+<td>1E</td>
+<td>NC</td>
+<td>1E</td>
+<td>A3</td>
+<td>1 Bit port free for GPIO</td>
+</tr>
+<tr><td>GPIO_3</td>
+<td>NC</td>
+<td>1H</td>
+<td>NC</td>
+<td>1H</td>
+<td>A4</td>
+<td>1 Bit port free for GPIO</td>
+</tr>
+<tr><td>UART_TX</td>
+<td>1C</td>
+<td>1K</td>
+<td>1C</td>
+<td>1K</td>
+<td>B10</td>
+<td>RS232 TX</td>
+</tr>
+<tr><td>UART_RX</td>
+<td>1G</td>
+<td>1I</td>
+<td>1G</td>
+<td>1I</td>
+<td>B15</td>
+<td>RS232 RX</td>
+</tr>
+<tr><td>I2C_SCL</td>
+<td>1F</td>
+<td>1L</td>
+<td>1F</td>
+<td>1L</td>
+<td>A15</td>
+<td>I2C Clock for ADC</td>
+</tr>
+<tr><td>I2C_SDA</td>
+<td>1B</td>
+<td>1J</td>
+<td>1B</td>
+<td>1J</td>
+<td>A8</td>
+<td>I2C Data for ADC</td>
+</tr>
+<tr><td>GPO_0/LED_0</td>
+<td>4A0</td>
+<td>4E0</td>
+<td>4A0</td>
+<td>4E0</td>
+<td>B6</td>
+<td>GP output, connected to LED</td>
+</tr>
+<tr><td>GPO_1/LED_1</td>
+<td>4A1</td>
+<td>4E1</td>
+<td>4A1</td>
+<td>4E1</td>
+<td>B7</td>
+<td>GP output, connected to LED</td>
+</tr>
+<tr><td>GPO_6/LED_2</td>
+<td>4A2</td>
+<td>4E2</td>
+<td>4A2</td>
+<td>4E2</td>
+<td>A6</td>
+<td>GP output, connected to LED</td>
+</tr>
+<tr><td>GPO_7/LED_3</td>
+<td>4A3</td>
+<td>4E3</td>
+<td>4A3</td>
+<td>4E3</td>
+<td>A7</td>
+<td>GP output, connected to LED</td>
+</tr>
+<tr><td>GPO_2</td>
+<td>4B0</td>
+<td>4F0</td>
+<td>4B0</td>
+<td>4F0</td>
+<td>B9</td>
+<td>GP output</td>
+</tr>
+<tr><td>GPO_3</td>
+<td>4B1</td>
+<td>4F1</td>
+<td>4B1</td>
+<td>4F1</td>
+<td>B11</td>
+<td>GP output</td>
+</tr>
+<tr><td>GPO_4</td>
+<td>4B2</td>
+<td>4F2</td>
+<td>4B2</td>
+<td>4F2</td>
+<td>A9</td>
+<td>GP output</td>
+</tr>
+<tr><td>GPO_5</td>
+<td>4B3</td>
+<td>4F3</td>
+<td>4B3</td>
+<td>4F3</td>
+<td>A11</td>
+<td>GP output</td>
+</tr>
+<tr><td>BUTTON_A</td>
+<td>4C0</td>
+<td>8D0</td>
+<td>4C0</td>
+<td>8D0</td>
+<td>B12</td>
+<td>Input from Button A</td>
+</tr>
+<tr><td>BUTTON_B</td>
+<td>4C1</td>
+<td>8D1</td>
+<td>4C1</td>
+<td>8D1</td>
+<td>B13</td>
+<td>Input from Button B</td>
+</tr>
+<tr><td>GPI_0</td>
+<td>4D0</td>
+<td>1O</td>
+<td>4D0</td>
+<td>1O</td>
+<td>B17</td>
+<td>GP Input</td>
+</tr>
+<tr><td>GPI_1</td>
+<td>4D1</td>
+<td>1P</td>
+<td>4D0</td>
+<td>1P</td>
+<td>B18</td>
+<td>GP Input</td>
+</tr>
+<tr><td>GPI_2</td>
+<td>4D2</td>
+<td>8D4</td>
+<td>4D0</td>
+<td>NC</td>
+<td>A18</td>
+<td>GP Input</td>
+</tr>
+<tr><td>GPI_3</td>
+<td>4D3</td>
+<td>8D5</td>
+<td>4D0</td>
+<td>NC</td>
+<td>A17</td>
+<td>GP Input</td>
+</tr>
+<tr><td>GPI_4</td>
+<td>4C2</td>
+<td>8D6</td>
+<td>4C2</td>
+<td>NC</td>
+<td>A12</td>
+<td>GP Input</td>
+</tr>
+<tr><td>GPI_5</td>
+<td>4C3</td>
+<td>8D7</td>
+<td>4C3</td>
+<td>NC</td>
+<td>A13</td>
+<td>GP Input</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" id='d2'>
+        <div class="sphinxsidebarwrapper">
+<h3><a href="index.html">XA-SK-GPIO: General Purpose IO Slice Card</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Slice Card Overview</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Slicekit System Pins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#xa-sk-gpio-functional-pins">XA-SK-GPIO Functional Pins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collateral.html">Collateral</a></li>
+</ul>
+
+<div id="searchbox" style="display: none;margin-bottom: 10px;">
+  <h3>Search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+
+
+    <div class="footer">
+    </div>
+  </body>
+</html>
+
+
+
