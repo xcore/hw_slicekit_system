@@ -80,22 +80,22 @@ Function            STAR      TRIANGLE SQUARE   CIRCLE   PIN    Description
 1 bit                         1O                1O       B17
 1 bit                         1P                1P       B18
 ------------------- --------- -------- -------- -------- ------
-16 bit              A0        B0       A0                B6       
-16 bit              A1        B1       A1                B7
-16 bit              A2        B2       A2                B9
-16 bit              A3        B3       A3                B11
-16 bit              A4        B4       A4                A9
-16 bit              A5        B5       A5                A11
-16 bit              A6        B6       A6                A6
-16 bit              A7        B7       A7                A7
-16 bit              A8        B8       A8                B12       
-16 bit              A9        B9       A9                B13
-16 bit              A10       B10      A10               B17
-16 bit              A11       B11      A11               B18
-16 bit              A12       B12      A12               A17
-16 bit              A13       B13      A13               A18
-16 bit              A14       B14      A14               A12
-16 bit              A15       B15      A15               A13
+16 bit              16A0      16B0     16A0              B6       
+16 bit              16A1      16B1     16A1              B7
+16 bit              16A2      16B2     16A2              B9
+16 bit              16A3      16B3     16A3              B11
+16 bit              16A4      16B4     16A4              A9
+16 bit              16A5      16B5     16A5              A11
+16 bit              16A6      16B6     16A6              A6
+16 bit              16A7      16B7     16A7              A7
+16 bit              16A8      16B8     16A8              B12       
+16 bit              16A9      16B9     16A9              B13
+16 bit              16A10     16B10    16A10             B17
+16 bit              16A11     16B11    16A11             B18
+16 bit              16A12     16B12    16A12             A17
+16 bit              16A13     16B13    16A13             A18
+16 bit              16A14     16B14    16A14             A12
+16 bit              16A15     16B15    16A15             A13
 =================== ========= ======== ======== ======== ====== ===============================
 
 
