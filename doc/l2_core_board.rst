@@ -12,7 +12,7 @@ The Slicekit Core Board is powered by a 12V external power supply.
 The following sections describe the features of the Slicekit Core Board.
 
 Power
-+++++
+-----
 
 Power input to the Slicekit Core Board is via a standard barrel jack connector. A standard 12V external power supply should be used to power the board. Each Sliekit Core Board requires its own +12V supply.
 
@@ -25,7 +25,7 @@ The supplies are sequenced to ensure the power up sequence will be 5V then 3V3 t
 The Slicekit Core Board will provide 3V3 and 5V at 0.25A each for a total of approx 2W per slice.
 
 Debug
-+++++
+-----
 
 Debug of the system will be via the XSYS adapter board connected to the Chain Connector.
 
