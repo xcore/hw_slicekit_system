@@ -12,6 +12,7 @@ Slicekit system layout
 ----------------------
 
 .. image:: images/slicekitlayout.svg
+   :width: 600
 
 The diagram above shows an overview of the layout of the core board with slice boards attached. Each of the four slots has a specific label - ``Star``, ``Triange``, ``Square`` and ``Circle``, printed on the Core Board silkscreen.  ``Triangle`` and ``Circle`` Slice Cards contain 24 XCore IOs and ``Star`` and ``Square`` Slice Cards 20 XCore IOs (usable as GPIO or two 5-wire XMOS links). The label denotes which Slice Cards are compatible with which Core Board Slots. The Slice Cards are also marked with one or more of these labels to identify the slot type(s) they function correctly with.
 

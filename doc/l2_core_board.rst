@@ -44,47 +44,48 @@ The use of XScope is covered in the XMOS Links section. The XScope XMOS Link can
 L2 Boot
 -------
 
-Master Core Boards boot from SPI flash. Slave Core Boards will boot from XMOS link ``XLB`` from the next connected Core Board. 
+Master Core Boards boot from SPI flash, while slave Core Boards boot from XMOS link ``XLB`` from the next connected Core Board. 
 
-To allow re-use of the SPI boot pins as signal IO pins, a latched bus switch is used which connects the XCore SPI pins to either the SPI Flash or to the Slice Card Slots.
-
-The switch is controlled by X0D42 and X0D43 (P8D6 and P8D7 on Tile 0). Once the device has booted X0D43 is used to enable or disable the SPI interface, X0D42 should then transistion from low to high to latch the selection.
+To allow re-use of the SPI boot pins (ports 1A, 1B, 1C, 1D) as signal IO pins for the ``Star`` slot, a latched bus switch is used which connects the XCore SPI pins to either the SPI Flash or to the Slice Card Slots. The switch is controlled by X0D42 and X0D43 (P8D6 and P8D7 on Tile 0: e.g. on the ``Triangle`` slot). Once the device has booted X0D43 is used to enable or disable the SPI interface, X0D42 should then transistion from low to high to latch the selection. The SPI selection state is then maintained until the system is reset. 
 
 .. image:: images/spiselectflow.svg
 
-The SPI selection state is then maintained until the system is reset.
+Once this sequence is completed the selection has been latched therefore X0D42 and X0D43 return to performing their normal functions in the ``Triangle`` slot.
+
+.. warning:: If the SPI is not disabled, then Slice Cards in the ``Star`` slot may not function as expected. If there is no Slice Card in the ``Star`` slot, then it does not matter whether the SPI has been disabled or not. Therefore, applications which require runtime access to the SPI flash should either leave the ``Star`` slot unpopulated or check to ensure that the Card which is in there will be unaffected by the operation of the Flash.
 
 The XTAG2 system can use the boot mode select signal to force all devices in the chain (master and slave Core Boards) to boot from JTAG (don't boot) for debug purposes. 
+
 If not in this mode, the devices will boot from SPI or XMOS Link as appropriate.
 
 XMOS Links
 ----------
 
-The ``Chain`` Connector contains two 5-bit XMOS Links, XLA and XLB, which can be used for chaining Slicekit Core Boards together. The links from Tile 0 are connected to the ``Chain`` Connector and the ``Star`` Slot. 
-The links from Tile 1 are connected to the ``Square`` Slot. 
+The Chain Connector contains two 5-bit XMOS Links, XLA and XLB, which can be used for chaining Slicekit Core Boards together. The links from Tile 0 are connected to the Chain Connector and the Star Slot.  The links from Tile 1 are connected to the Square Slot. 
 
-The only complication in this system is use of the XScope 2-bit XMOS Link. This link overlaps a 4 bit port on the ``Star`` Slot connector so it is not be possible to use this for user IO at the same time as XScope. 
+The only complication in this system is use of the XScope 2-bit XMOS Link. This link overlaps a 4 bit port on the Star Slot connector so it would not be possible to use this for user IO at the same time as XScope. 
+
 To work around this, a switch is present on the XTAG2 adapter board to either enable or disable the XScope XMOS Link. 
 When disabled, these pins are disconnected from the ``Chain`` Connector and are free for use on the ``Star`` Slot. When enabled they will work as an XMOS link and hence will appear on the relevant pins of the ``Star`` Slot. 
 
-It is therefore recommended that if a Slice Card is used in the ``Star`` Slot the XScope switch is off to ensure correct operation of the Slice Card.
+.. warning:: It is recommended that if a Slice Card is used in the Star Slot the XScope switch is off on the XTAG Adaptor Card to ensure correct operation of the Slice Card in the ``Star`` slot.
+
 
 Reset
 -----
 
-The whole system is held in reset until all power supplies are stable. This system reset is connected to all Slice Cards so any circuitry on them can be reset. 
-It also indicates to the Slice Cards that their power input is stable.
-
-The reset from the XTAG2 resets the whole system if required for debugging.
+The whole system is held in reset until all power supplies are stable, and reset is connected to all Slice Cards so any circuitry on them can be reset. 
+It also indicates to the Slice Cards that their power input is stable. The reset from the XTAG2 resets the whole system, if required for debugging.
 
 Clocking
 --------
 
-There are two sources for the system clock: an on-board 25MHz oscillator or the CLK signal from the ``Chain`` Connector. The system clock source is selected automatically.
 
-This means the system clock from the master Core Board will be fed to all of the slave Core Boards so the whole system will operate synchronously.
+There are two sources for the system clock: an on-board 25MHz oscillator or the CLK signal from the Chain Connector. The system clock source is selected automatically according to the presence signals onthe ``Chain`` connector. 
 
-The system clock is also fed to each of the Slice Cards.
+This means the system clock from a Master Core Board is fed automatically to all of the slave Core Boards so the whole system will operate synchronously.
+
+The system clock is also fed to each of the Slice Card Slots.
 
 Testpoints
 ----------
@@ -742,12 +743,14 @@ CHAIN
 | A18          | X0D16  | XLB1o  | XLB2b  | XLB5b  |        |        |
 +--------------+--------+--------+--------+--------+--------+--------+
 
-Slot signal notes
-+++++++++++++++++
+System Services Slot Signals
+++++++++++++++++++++++++++++
 
 On all Slots, TDO is always out of the Slicekit Core Board, TDI is always in to the Core Board.
 
-MSEL, TCK, TMS, RST_N are all inputs to the Core Board from the ``Chain`` Connector and outputs from the Core Board on the ``Square`` Slot .
+
+MSEL, TCK, TMS, RST_N are all inputs to the Core Board from the ``Chain`` Connector and outputs from the Core Board on the ``Square`` Slot.
+
 DEBUG is bidirectional.
 
 PRSNT is used on the ``Chain`` Connector to detect it is plugged into the ``Square`` Slot of another Core Board. This signal is used to switch JTAG and CLK sources.
