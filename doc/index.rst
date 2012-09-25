@@ -5,4 +5,5 @@ Slicekit Hardware Manual
 
    Overview <overview>
    Core Board <l2_core_board> 
-   Slice Cards <slice_cards>
+   Slice Cards and Slots <slice_cards>
+   Designing a Slice Card <design_your_own>
