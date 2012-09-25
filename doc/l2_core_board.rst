@@ -61,25 +61,15 @@ If not in this mode, the devices will boot from SPI or XMOS Link as appropriate.
 XMOS Links
 ----------
 
-<<<<<<< HEAD
 The Chain Connector contains two 5-bit XMOS Links, XLA and XLB, which can be used for chaining Slicekit Core Boards together. The links from Tile 0 are connected to the Chain Connector and the Star Slot.  The links from Tile 1 are connected to the Square Slot. 
 
 The only complication in this system is use of the XScope 2-bit XMOS Link. This link overlaps a 4 bit port on the Star Slot connector so it would not be possible to use this for user IO at the same time as XScope. 
 
-=======
-The ``Chain`` Connector contains two 5-bit XMOS Links, XLA and XLB, which can be used for chaining Slicekit Core Boards together. The links from Tile 0 are connected to the ``Chain`` Connector and the ``Star`` Slot. 
-The links from Tile 1 are connected to the ``Square`` Slot. 
-
-The only complication in this system is use of the XScope 2-bit XMOS Link. This link overlaps a 4 bit port on the ``Star`` Slot connector so it is not be possible to use this for user IO at the same time as XScope. 
->>>>>>> 6b7ce253843df854b19c1ad3d72b4a05b0500d09
 To work around this, a switch is present on the XTAG2 adapter board to either enable or disable the XScope XMOS Link. 
 When disabled, these pins are disconnected from the ``Chain`` Connector and are free for use on the ``Star`` Slot. When enabled they will work as an XMOS link and hence will appear on the relevant pins of the ``Star`` Slot. 
 
-<<<<<<< HEAD
 .. warning:: It is recommended that if a Slice Card is used in the Star Slot the XScope switch is off on the XTAG Adaptor Card to ensure correct operation of the Slice Card in the ``Star`` slot.
-=======
-It is therefore recommended that if a Slice Card is used in the ``Star`` Slot the XScope switch is off to ensure correct operation of the Slice Card.
->>>>>>> 6b7ce253843df854b19c1ad3d72b4a05b0500d09
+
 
 Reset
 -----
@@ -90,11 +80,8 @@ It also indicates to the Slice Cards that their power input is stable. The reset
 Clocking
 --------
 
-<<<<<<< HEAD
+
 There are two sources for the system clock: an on-board 25MHz oscillator or the CLK signal from the Chain Connector. The system clock source is selected automatically according to the presence signals onthe ``Chain`` connector. 
-=======
-There are two sources for the system clock: an on-board 25MHz oscillator or the CLK signal from the ``Chain`` Connector. The system clock source is selected automatically.
->>>>>>> 6b7ce253843df854b19c1ad3d72b4a05b0500d09
 
 This means the system clock from a Master Core Board is fed automatically to all of the slave Core Boards so the whole system will operate synchronously.
 
@@ -761,12 +748,9 @@ System Services Slot Signals
 
 On all Slots, TDO is always out of the Slicekit Core Board, TDI is always in to the Core Board.
 
-<<<<<<< HEAD
-MSEL, TCK, TMS, RST_N are all inputs to the core board from the Chain Connector and outputs from the Core Board on the Square Slot.
 
-=======
-MSEL, TCK, TMS, RST_N are all inputs to the Core Board from the ``Chain`` Connector and outputs from the Core Board on the ``Square`` Slot .
->>>>>>> 6b7ce253843df854b19c1ad3d72b4a05b0500d09
+MSEL, TCK, TMS, RST_N are all inputs to the Core Board from the ``Chain`` Connector and outputs from the Core Board on the ``Square`` Slot.
+
 DEBUG is bidirectional.
 
 PRSNT is used on the ``Chain`` Connector to detect it is plugged into the ``Square`` Slot of another Core Board. This signal is used to switch JTAG and CLK sources.
