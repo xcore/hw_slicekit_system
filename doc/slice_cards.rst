@@ -6,15 +6,15 @@ Summary
 
 Slicekit Slice Cards are used to implement peripheral circuitry as part of the Slicekit modular hardware platform.
 
-There are four types of Slice Card, Star, Triangle, Square and Circle. These only differ in the number of xCore Processor IO signals available to the Slice Card.
+There are four types of Slice Card, ``Star``, ``Triangle``, ``Square`` and ``Circle``. These only differ in the number of xCore Processor IO signals available to the Slice Card.
 
-Star and Square Slice Cards have 20 xCore Processor IOs including four 1-bit ports.
+``Star`` and ``Square`` Slice Cards have 20 xCore Processor IOs including four 1-bit ports.
 
-Triangle Slice Cards have 24 xCore Processor IOs including twelve 1-bit ports.
+``Triangle`` Slice Cards have 24 xCore Processor IOs including twelve 1-bit ports.
 
-Circle Slice Cards have 20 xCore Processor IOs including twelve 1-bit ports.
+``Circle`` Slice Cards have 20 xCore Processor IOs including twelve 1-bit ports.
 
-Star and Square slices are a subset of Triangle and Circle slices so a Star/Square Slice Card can be plugged into a Triangle/Circle Slot (see notes later for exceptions).
+``Star`` and ``Square`` slices are a subset of ``Triangle`` and ``Circle`` slices so a ``Star``/``Square`` Slice Card can be plugged into a ``Triangle``/``Circle`` Slot (see notes later for exceptions).
 
 A Double Slice Card is a board with two Slice Card finger connectors and connects to all of the IO on one Tile.
 
@@ -47,9 +47,9 @@ Due to the constraints on the Slicekit Core Board, there are some ports on the S
 
 - X0D4-7 can be selected for use as the XScope XMOS Link
 - X1D40-43 are not available on the L2
-- X0D0,1,10,11 could be used for SPI boot on a master core board. These pins will be hi-z when booting and transfer to the XCore IO signals when boot is complete.
+- X0D0,1,10,11 could be used for SPI boot on a master core board. These pins will be hi-z when booting and can be transfered to the XCore IO signals when boot is complete.
 
-For Slice Cards intended for use in the Star Slot, P4B should be avoided with the knowledge that using it means XScope can not be used if the Slice Card is plugged into the Star Slot.
+For Slice Cards intended for use in the ``Star`` Slot, P4B should be avoided with the knowledge that using it means XScope can not be used if the Slice Card is plugged into the ``Star`` Slot.
 
 Slice Card Form Factors
 -----------------------
