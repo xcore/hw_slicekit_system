@@ -21,7 +21,7 @@ Slicekit system layout
 
 The diagram below shows an overview of the layout of the core board with slice boards attached.
 
-.. image:: images/slicekitlayout.png
+.. image:: images/slicekitlayout.svg
 
 Each Slot is identified by a symbol on the silkscreen of the board, the Star and Triange Slots are pinned out to Tile 0 and the Circle and Square Slots to Tile 1.
 
