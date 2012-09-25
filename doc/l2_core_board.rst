@@ -35,7 +35,7 @@ Presence detect signals are present on both the Chain Connector and Square Slot 
 
 In a system of multiple Slicekit Core Boards, the master will be the source of the JTAG chain so the system can only be debugged from the master. Other boards will see no devices in the JTAG chain.
 
-.. image:: images/jtagchain.png
+.. image:: images/jtagchain.svg
 
 The use of XScope is covered in the XMOS Links section. The XScope XMOS Link can be either enabled or disabled via a switch on the XTAG2 adapter board.
 
@@ -48,7 +48,7 @@ To allow re-use of the SPI boot pins as signal IO pins, a latched bus switch is 
 
 The switch is controlled by X0D42 and X0D43 (P8D6 and P8D7 on Tile 0). Once the device has booted X0D43 is used to enable or disable the SPI interface, X0D42 should then transistion from low to high to latch the selection.
 
-.. image:: images/spiselectflow.png
+.. image:: images/spiselectflow.svg
 
 The SPI selection state is then maintained until the system is reset.
 
