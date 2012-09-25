@@ -7,7 +7,7 @@ Summary
 Slicekit Slice Cards are used to implement peripheral circuitry as part of the Slicekit platform.
 
 
-Existing Slice Cards may connect to some or all of the ``Star``, ``Triangle``, ``Square`` and ``Circle` slots. Their compatibility with each slot is indicated by the range of symbols printed on the Slice Card silkscreen. A Card havnig all four symbols is compatible with all slots, a subset of symbols indicates that some slots don't have sufficient IO or suitable IO resources to work with that Card.
+Existing Slice Cards may connect to some or all of the ``Star``, ``Triangle``, ``Square`` and ``Circle`` slots. Their compatibility with each slot is indicated by the range of symbols printed on the Slice Card silkscreen. A Card havnig all four symbols is compatible with all slots, a subset of symbols indicates that some slots don't have sufficient IO or suitable IO resources to work with that Card.
 
 ``Star`` and ``Square`` Slice Cards have 20 xCore Processor IOs including four 1-bit ports.
 
@@ -247,4 +247,4 @@ CIRCLE
 +-----+--------+--------+
 | B18 | X1D39  | NC     |
 +-----+--------+--------+
->>>>>>> 6b7ce253843df854b19c1ad3d72b4a05b0500d09
+
