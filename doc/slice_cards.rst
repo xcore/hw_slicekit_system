@@ -163,43 +163,43 @@ The pinouts of the four types of Slice Card are shown below.
 +-----+--------+--------+
 | PIN | SIDE B | SIDE A |
 +=====+========+========+
-| B1           | NC     | NOT CONNECTED                              | A1           | NC     | NOT CONNECTED                              |
+| B1  | NC     | NC     |
 +-----+--------+--------+
-| B2           | X0D0   | P1A0   |        |        |        |        | A2           |*5V*    | POWER SUPPLY 5V                            |
+| B2  | X0D0   |*5V*    |
 +-----+--------+--------+
-| B3           |*GND*   | POWER SUPPLY GROUND                        | A3           | X0D12  | P1E0   |        |        |        |        |
+| B3  |*GND*   | X0D12  |
 +-----+--------+--------+
-| B4           | X0D11  | P1D0   |        |        |        |        | A4           | X0D23  | P1H0   |        |        |        |        |
+| B4  | X0D11  | X0D23  |
 +-----+--------+--------+
-| B5           |*3V3*   | POWER SUPPLY 3.3V                          | A5           |*GND*   | POWER SUPPLY GROUND                        |
+| B5  |*3V3*   |*GND*   |
 +-----+--------+--------+
-| B6           | X0D26  |        | P4E0   | P8C0   | P16B0  |        | A6           | X0D32  |        | P4E2   | P8C6   | P16B6  |        |
+| B6  | X0D26  | X0D32  |
 +-----+--------+--------+
-| B7           | X0D27  |        | P4E1   | P8C1   | P16B1  |        | A7           | X0D33  |        | P4E3   | P8C7   | P16B7  |        |
+| B7  | X0D27  | X0D33  |
 +-----+--------+--------+
-| B8           |*GND*   | POWER SUPPLY GROUND                        | A8           | X0D25  | P1J0   |        |        |        |        |
+| B8  |*GND*   | X0D25  |
 +-----+--------+--------+
-| B9           | X0D28  |        | P4F0   | P8C2   | P16B2  |        | A9           | X0D30  |        | P4F2   | P8C4   | P16B4  |        |
+| B9  | X0D28  | X0D30  |
 +-----+--------+--------+
-| B10          | X0D34  | P1K0   |        |        |        |        | A10          |*GND*   | POWER SUPPLY GROUND                        |
+| B10 | X0D34  |*GND*   |
 +-----+--------+--------+
-| B11          | X0D29  |        | P4F1   | P8C3   | P16B3  |        | A11          | X0D31  |        | P4F3   | P8C5   | P16B5  |        |
+| B11 | X0D29  | X0D31  |
 +-----+--------+--------+
-|**KEY**       |**KEY** |**MECHANICAL KEY**                          |**KEY**       |**KEY** | **MECHANICAL KEY**                         |
+|**MECHANICAL KEY**     |
 +-----+--------+--------+
-| B12          | X0D36  | P1M0   |        | P8D0   | P16B8  |        | A12          | X0D42  |        |        | P8D6   | P16B14 |        |
+| B12 | X0D36  | X0D42  |
 +-----+--------+--------+
-| B13          | X0D37  | P1N0   |        | P8D1   | P16B9  |        | A13          | X0D43  |        |        | P8D7   | P16B15 |        |
+| B13 | X0D37  | X0D43  |
 +-----+--------+--------+
-| B14          |*CLK*   | MAIN SYSTEM CLOCK                          | A14          |*GND*   | POWER SUPPLY GROUND                        |
+| B14 |*CLK*   |*GND*   |
 +-----+--------+--------+
-| B15          | X0D24  | P1I0   |        |        |        |        | A15          | X0D35  | P1L0   |        |        |        |        |
+| B15 | X0D24  | X0D35  |
 +-----+--------+--------+
-| B16          |*GND*   | POWER SUPPLY GROUND                        | A16          |*RST_N* | SYSTEM RESET (ACTIVE LOW)                  |
+| B16 |*GND*   |*RST_N* |
 +-----+--------+--------+
-| B17          | X0D38  | P1O0   |        | P8D2   | P16B10 |        | A17          | X0D40  |        |        | P8D4   | P16B12 |        |
+| B17 | X0D38  | X0D40  |
 +-----+--------+--------+
-| B18          | X0D39  | P1P0   |        | P8D3   | P16B11 |        | A18          | X0D41  |        |        | P8D5   | P16B13 |        |
+| B18 | X0D39  | X0D41  |
 +-----+--------+--------+
 
 +-----------------------+
@@ -207,41 +207,41 @@ The pinouts of the four types of Slice Card are shown below.
 +-----+--------+--------+
 | PIN | SIDE B | SIDE A |
 +=====+========+========+
-| B1           | NC     | NOT CONNECTED                              | A1           | NC     | NOT CONNECTED                              |
+| B1  | NC     | NC     |
 +-----+--------+--------+
-| B2           | X1D0   | P1A0   |        |        |        |        | A2           |*5V*    | POWER SUPPLY 5V                            |
+| B2  | X1D0   |*5V*    |
 +-----+--------+--------+
-| B3           |*GND*   | POWER SUPPLY GROUND                        | A3           | X1D12  | P1E0   |        |        |        |        |
+| B3  |*GND*   | X1D12  |
 +-----+--------+--------+
-| B4           | X1D11  | P1D0   |        |        |        |        | A4           | X1D23  | P1H0   |        |        |        |        |
+| B4  | X1D11  | X1D23  |
 +-----+--------+--------+
-| B5           |*3V3*   | POWER SUPPLY 3.3V                          | A5           |*GND*   | POWER SUPPLY GROUND                        |
+| B5  |*3V3*   |*GND*   |
 +-----+--------+--------+
-| B6           | X1D26  |        | P4E0   | P8C0   | P16B0  |        | A6           | X1D32  |        | P4E2   | P8C6   | P16B6  |        |
+| B6  | X1D26  | X1D32  |
 +-----+--------+--------+
-| B7           | X1D27  |        | P4E1   | P8C1   | P16B1  |        | A7           | X1D33  |        | P4E3   | P8C7   | P16B7  |        |
+| B7  | X1D27  | X1D33  |
 +-----+--------+--------+
-| B8           |*GND*   | POWER SUPPLY GROUND                        | A8           | X1D25  | P1J0   |        |        |        |        |
+| B8  |*GND*   | X1D25  |
 +-----+--------+--------+
-| B9           | X1D28  |        | P4F0   | P8C2   | P16B2  |        | A9           | X1D30  |        | P4F2   | P8C4   | P16B4  |        |
+| B9  | X1D28  | X1D30  |
 +-----+--------+--------+
-| B10          | X1D34  | P1K0   |        |        |        |        | A10          |*GND*   | POWER SUPPLY GROUND                        |
+| B10 | X1D34  |*GND*   |
 +-----+--------+--------+
-| B11          | X1D29  |        | P4F1   | P8C3   | P16B3  |        | A11          | X1D31  |        | P4F3   | P8C5   | P16B5  |        |
+| B11 | X1D29  | X1D31  |
 +-----+--------+--------+
-|**KEY**       |**KEY** |**MECHANICAL KEY**                          |**KEY**       |**KEY** | **MECHANICAL KEY**                         |
+|**MECHANICAL KEY**     |
 +-----+--------+--------+
-| B12          | X1D36  | P1M0   |        | P8D0   | P16B8  |        | A12          | NC     | NOT CONNECTED                              |
+| B12 | X1D36  | NC     |
 +-----+--------+--------+
-| B13          | X1D37  | P1N0   |        | P8D1   | P16B9  |        | A13          | NC     | NOT CONNECTED                              |
+| B13 | X1D37  | NC     |
 +-----+--------+--------+
-| B14          |*CLK*   | MAIN SYSTEM CLOCK                          | A14          |*GND*   | POWER SUPPLY GROUND                        |
+| B14 |*CLK*   |*GND*   |
 +-----+--------+--------+
-| B15          | X1D24  | P1I0   |        |        |        |        | A15          | X1D35  | P1L0   |        |        |        |        |
+| B15 | X1D24  | X1D35  |
 +-----+--------+--------+
-| B16          |*GND*   | POWER SUPPLY GROUND                        | A16          |*RST_N* | SYSTEM RESET (ACTIVE LOW)                  |
+| B16 |*GND*   |*RST_N* |
 +-----+--------+--------+
-| B17          | X1D38  | P1O0   |        | P8D2   | P16B10 |        | A17          | NC     | NOT CONNECTED                              |
+| B17 | X1D38  | NC     |
 +-----+--------+--------+
-| B18          | X1D39  | P1P0   |        | P8D3   | P16B11 |        | A18          | NC     | NOT CONNECTED                              |
+| B18 | X1D39  | NC     |
 +-----+--------+--------+
