@@ -11,7 +11,7 @@ The Core Board contains a fully pinned out 16-core xCore Processor, with its GPI
 Slicekit system layout
 ----------------------
 
-.. image:: images/slicekitlayout.PNG
+.. image:: images/slicekitlayout.svg
 
 The diagram above shows an overview of the layout of the core board with slice boards attached. Each of the four slots has a specific label - ``Star``, ``Triange``, ``Square`` and ``Circle``, printed on the Core Board silkscreen.  ``Triangle`` and ``Circle`` Slice Cards contain 24 XCore IOs and ``Star`` and ``Square`` Slice Cards 20 XCore IOs (usable as GPIO or two 5-wire XMOS links). The label denotes which Slice Cards are compatible with which Core Board Slots. The Slice Cards are also marked with one or more of these labels to identify the slot type(s) they function correctly with.
 
@@ -20,6 +20,7 @@ The final type of connector is on the bottom left of the Core Board and is marke
 All Slots are 36 pin PCI express style connectors in either socket or edge finger (plug) types.
 
 Star and Triange Slots are pinned out from Tile 0 of the L2 xCore and the Circle and Square Slots from Tile 1.
+
 
 
 
