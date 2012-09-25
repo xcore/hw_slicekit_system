@@ -70,8 +70,8 @@ Connector Pinouts
 
 The pinouts of the four types of Slice Card are shown below.
 
-+-----------------------+
-| STAR                  |
+STAR                  
+++++
 +-----+--------+--------+
 | PIN | SIDE B | SIDE A |
 +=====+========+========+
@@ -114,8 +114,8 @@ The pinouts of the four types of Slice Card are shown below.
 | 18  | X0D17  | X0D19  |
 +-----+--------+--------+
 
-+-----------------------+
-| SQUARE                |
+SQUARE                
+++++++
 +-----+--------+--------+
 | PIN | SIDE B | SIDE A |
 +=====+========+========+
@@ -158,8 +158,8 @@ The pinouts of the four types of Slice Card are shown below.
 | 18  | X1D17  | X1D19  |
 +-----+--------+--------+
 
-+-----------------------+
-| TRIANGLE              |
+TRIANGLE              
+++++++++
 +-----+--------+--------+
 | PIN | SIDE B | SIDE A |
 +=====+========+========+
@@ -202,8 +202,8 @@ The pinouts of the four types of Slice Card are shown below.
 | B18 | X0D39  | X0D41  |
 +-----+--------+--------+
 
-+-----------------------+
-| CIRCLE                |
+CIRCLE                
+++++++
 +-----+--------+--------+
 | PIN | SIDE B | SIDE A |
 +=====+========+========+
