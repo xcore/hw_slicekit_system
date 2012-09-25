@@ -3,6 +3,6 @@ Slicekit Hardware Manual
 
 .. toctree::
 
-   overview.rst
-   L2 core board.rst
-   Slice cards.rst
+   Overview <overview>
+   Core Board <l2_core_board> 
+   Slice Cards <slice_cards>

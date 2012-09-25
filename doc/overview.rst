@@ -4,25 +4,23 @@ Slicekit Overview
 Introduction
 ------------
 
-This document specifies the hardware design of the Slicekit Core Board and Slice Cards.
+This document covers the hardware design of the Slicekit Modular Development System, consisting of the Core Board, Slice Cards and XTAG adaptor.
 
-The Slicekit Core Board contains a fully pinned out XMOS L2, 16 core, xCore Processor, connected to expansion connectors (Slots) to interface with Slice Cards.
-The Slicekit Core Board contains all circuitry necessary for operating and debugging the XMOS system with the interface to the outside world being made via the Slice Cards.
-
-Multiple Slicekit Core Boards can be interconnected to form a multi XMOS device system with dual 5-bit XMOS Links being present between the boards.
-A Slicekit Core Board at the start of a chain (no connected board on the Chain Connector) is a Master board. Core boards connected through the Chain Connector are slave boards.
-
-Four types of Slice Cards are supported - Star, Triange, Square and Circle. Triange and Circle Slice Cards contain 24 XCore IOs and Star and Square Slice Cards 20 XCore IOs.
-
-Slice Cards are marked with one or more symbols to identify the slot type(s) they function correctly with.
+The Core Board contains a fully pinned out 16-core xCore Processor, with its GPIOs connected to four expansion connectors (termed ``Slots``) to interface with expansion cards called Slice Cards which plug into the slots. The Core Board also contains all circuitry necessary for operating and debugging the XMOS system. Multiple Slicekit Core Boards can be interconnected to form a multi XMOS device system with dual 5-bit XMOS Links being present between the boards.
 
 Slicekit system layout
 ----------------------
 
-The diagram below shows an overview of the layout of the core board with slice boards attached.
+.. image:: images/slicekitlayout.PNG
 
-.. image:: images/slicekitlayout.png
+The diagram above shows an overview of the layout of the core board with slice boards attached. Each of the four slots has a specific label - ``Star``, ``Triange``, ``Square`` and ``Circle``, printed on the Core Board silkscreen.  ``Triangle`` and ``Circle`` Slice Cards contain 24 XCore IOs and ``Star`` and ``Square`` Slice Cards 20 XCore IOs (usable as GPIO or two 5-wire XMOS links). The label denotes which Slice Cards are compatible with which Core Board Slots. The Slice Cards are also marked with one or more of these labels to identify the slot type(s) they function correctly with.
 
-Each Slot is identified by a symbol on the silkscreen of the board, the Star and Triange Slots are pinned out to Tile 0 and the Circle and Square Slots to Tile 1.
+The final type of connector is on the bottom left of the Core Board and is marked with a hollow square symbol with an X through it. This is for connecting multiple Core Boards together to form systems of 32 logical cores or more. It is termed the ``chain`` slot.
 
 All Slots are 36 pin PCI express style connectors in either socket or edge finger (plug) types.
+
+Star and Triange Slots are pinned out from Tile 0 of the L2 xCore and the Circle and Square Slots from Tile 1.
+
+
+
+
