@@ -1,28 +1,42 @@
-The Multi Uart Slice Card provides eight 115.2 Kbaud Full Duplex Uarts connected to two 8-bit ports. Combined with sc_multi_uart xSOFTip, it allows XCORE multicore microcontrollers to implement multiple fast RS232 or TTL uarts in the minimum number of logical cores. This Slice Card along with the Ethernet Slice Card and the associated xSoftIp also form the basis of a fully feature Ethernet-to-multi-serial reference design. This Slice can also be used stand alone. 
+The GPIO Slice Card provides a collection of features to sliceKIT including LEDs, buttons and A/D inputs. Combined with xSOFTip it allows simple input/output functions to be evaluated easily, and provides I/O expansion to connect your sliceKIT to other systems. The quick start guide will help you get up and running with sliceKIT in seconds.
 
 Features
 --------
 
-   * Up to 8 full duplex uarts
-   * up to 115.2 Kbaud
-   * configurable parity, stop bits, bits per character
+   * 4 LEDs
+   * 2 buttons
+   * One RS232 parallel cable with DB9 connector(cable not included)
+   * 4 channel A/D via I2C interface
+   * Thermistor input via A/D
+
+Standalone Demo
+---------------
+The standalone demo for this slice card allows you to use xSOFTip to flash LEDs, read the ADC via I2C and output to the console via JTAG.
 
 BUY NOW
 -------
 
-.. image:: images/serial320.png
+.. image:: images/gpio320.png
 
 FIXME: Link
 
 Resources 
 ---------
 
-FIXME: Stand Alone Demo Quick Start Guide LINK:sc_multi_uart/app_slicekit_com_demo/doc_quickstart
-FIXME: HW Guide LINK:hw_slicekit_system/module_XA-SK-UART-8/doc/
+FIXME: Stand Alone Demo Quick Start Guide LINK:https://github.com/xcore/sw_gpio_examples/tree/master/app_sk_gpio_simple_demo
+
+FIXME: HW Guide LINK:hw_sliceKIT_system/module_XA-SK-GPIO/doc/
+
 FIXME: ../files/schematic.pdf
+
 FIXME: ../files/layout.pdf
+
 FIXME: ../files/BOM.xls
-FIXME: Related IP LINK: sc_multi_uart/module_multi_uart/doc
-FIXME: Related Product LINK: sw_serial_to_ethernet
+
+FIXME: Related IP LINK: sc_i2c
+FIXME: Related IP LINK: sc_pwm
+FIXME: Related IP LINK: sw_gpio_examples
+
+FIXME: Related Application LINK: sw_serial_to_ethernet
 
 
