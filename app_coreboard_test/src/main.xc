@@ -101,12 +101,12 @@ on stdcore[0]: port p1p0 = XS1_PORT_1P;
 
 void wait(void) {
   int i=0;
-  while(i<1000) { i = i+1;}
+  while(i<2000) { i = i+1; asm ("");}
 }
 
 void waitlong(void) {
   int i=0;
-  while(i<0x00FFFFFF) { i = i+1;}
+  while(i<0x00FFFFFF) { i = i+1;asm ("");}
 }
 
 void  all_1b_ports_input1() {
@@ -224,7 +224,7 @@ int run_test1(chanend c) {
   p8c1 :> tmp; 
   if(tmp & 0x04) { failed=1; printstr("On Core 1 8B0 failed to drive P8C2 to 0\n");}
   if(!(tmp & 0x02)) { failed=1; printstr("On Core 1 8B1 failed to drive P8C1 to 1\n");}
-  if(!(tmp & 0xF0)) { failed=1; printstr("On Core 1 8B7 failed to drive P8C7 to 1\n");}
+  if(!(tmp & 0x80)) { failed=1; printstr("On Core 1 8B7 failed to drive P8C7 to 1\n");}
   
   p8b1 <: 0x55;
   wait();
@@ -236,8 +236,7 @@ int run_test1(chanend c) {
   p8c1 :> tmp; 
   if(!(tmp & 0x04)) { failed=1; printstr("On Core 1 8B0 failed to drive P8C2 to 1\n");}
   if(tmp & 0x02) { failed=1; printstr("On Core 1 8B1 failed to drive P8C1 to 0\n");}
-  if(tmp & 0xF0) { failed=1; printstr("On Core 1 8B7 failed to drive P8C7 to 0\n");}
-  
+  if(tmp & 0x80) { failed=1; printstr("On Core 1 8B7 failed to drive P8C7 to 0\n");}
   p8b1 <: 0xFF;
   wait();  
 
@@ -250,7 +249,7 @@ int run_test1(chanend c) {
   p8c1 :> tmp; 
   if(!(tmp & 0x04)) { failed=1; printstr("On Core 1 8B0 failed to drive P8C2 to 1\n");}
   if(!(tmp & 0x02)) { failed=1; printstr("On Core 1 8B1 failed to drive P8C1 to 1\n");}
-  if(!(tmp & 0xF0)) { failed=1; printstr("On Core 1 8B7 failed to drive P8C7 to 1\n");}
+  if(!(tmp & 0x80)) { failed=1; printstr("On Core 1 8B7 failed to drive P8C7 to 1\n");}
 
   p8b1 <: 0;
   wait();
@@ -263,7 +262,7 @@ int run_test1(chanend c) {
   p8c1 :> tmp; 
   if(tmp & 0x04) { failed=1; printstr("On Core 1 8B0 failed to drive P8C2 to 0\n");}
   if(tmp & 0x02) { failed=1; printstr("On Core 1 8B1 failed to drive P8C1 to 0\n");}
-  if(tmp & 0xF0) { failed=1; printstr("On Core 1 8B7 failed to drive P8C7 to 0\n");}
+  if(tmp & 0x80) { failed=1; printstr("On Core 1 8B7 failed to drive P8C7 to 0\n");}
 
   //3: test remainder of drivers for port 8c, and port 1B driving port 1O
   all_1b_ports_input1();
@@ -527,7 +526,7 @@ int run_test0(chanend c) {
   p8c0 :> tmp; 
   if(tmp & 0x04) { failed=1; printstr("On Core 1 8B0 failed to drive P8C2 to 0\n");}
   if(!(tmp & 0x02)) { failed=1; printstr("On Core 1 8B1 failed to drive P8C1 to 1\n");}
-  if(!(tmp & 0xF0)) { failed=1; printstr("On Core 1 8B7 failed to drive P8C7 to 1\n");}
+  if(!(tmp & 0x80)) { failed=1; printstr("On Core 1 8B7 failed to drive P8C7 to 1\n");}
   
   p8b0 <: 0x55;
   wait();
@@ -539,7 +538,7 @@ int run_test0(chanend c) {
   p8c0 :> tmp; 
   if(!(tmp & 0x04)) { failed=1; printstr("On Core 1 8B0 failed to drive P8C2 to 1\n");}
   if(tmp & 0x02) { failed=1; printstr("On Core 1 8B1 failed to drive P8C1 to 0\n");}
-  if(tmp & 0xF0) { failed=1; printstr("On Core 1 8B7 failed to drive P8C7 to 0\n");}
+  if(tmp & 0x80) { failed=1; printstr("On Core 1 8B7 failed to drive P8C7 to 0\n");}
   
   p8b0 <: 0xFF;
   wait();  
@@ -553,7 +552,7 @@ int run_test0(chanend c) {
   p8c0 :> tmp; 
   if(!(tmp & 0x04)) { failed=1; printstr("On Core 1 8B0 failed to drive P8C2 to 1\n");}
   if(!(tmp & 0x02)) { failed=1; printstr("On Core 1 8B1 failed to drive P8C1 to 1\n");}
-  if(!(tmp & 0xF0)) { failed=1; printstr("On Core 1 8B7 failed to drive P8C7 to 1\n");}
+  if(!(tmp & 0x80)) { failed=1; printstr("On Core 1 8B7 failed to drive P8C7 to 1\n");}
 
   p8b0 <: 0;
   wait();
@@ -566,7 +565,7 @@ int run_test0(chanend c) {
   p8c0 :> tmp; 
   if(tmp & 0x04) { failed=1; printstr("On Core 1 8B0 failed to drive P8C2 to 0\n");}
   if(tmp & 0x02) { failed=1; printstr("On Core 1 8B1 failed to drive P8C1 to 0\n");}
-  if(tmp & 0xF0) { failed=1; printstr("On Core 1 8B7 failed to drive P8C7 to 0\n");}
+  if(tmp & 0x80) { failed=1; printstr("On Core 1 8B7 failed to drive P8C7 to 0\n");}
 
   //3: test remainder of drivers for port 8c, and port 1B driving port 1O
   all_1b_ports_input0();
