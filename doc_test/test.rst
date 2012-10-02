@@ -29,3 +29,22 @@ Starter Kits
 
 
 
+slicekit core board serial numbers 33000001 onwards
+slicekit core board board ID :
+vendor = XMOS 0x00 04 01 20 
+board family = 0x08 (slicekit)
+board name = XK-SKC-L2 (L2 core board) = 0x0
+mjor rev = 0x1
+minor rev = 0x1
+
+--serial-number = 1F78A90 (33000001 onwards)
+--board-id = 0x00080011
+--mac-address = 00:00:00:22:97:00:50:00 
+--mac-address = 00:00:00:22:97:00:50:01 
+--mac-address = 00:00:00:22:97:00:50:02 
+--mac-address = 00:00:00:22:97:00:50:03 
+
+ 
+e.g. 
+
+xburn --xmos --board-id = 0x00080011 --serialnumber=33000001 --mac-address=00:00:00:22:97:00:50:00 --mac-address=00:00:00:22:97:00:50:01  --mac-address=00:00:00:22:97:00:50:02 --mac-address=00:00:00:22:97:00:50:03 
