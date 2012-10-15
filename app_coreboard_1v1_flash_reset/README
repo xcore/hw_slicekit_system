@@ -1,0 +1,8 @@
+This program is a workaround for a PCB issue on the 1v1 L2 core board.
+
+If you flash a program that disables SPI flash then you will not be
+able to use xflash afterwards since the flash remains disabled even
+after system reset is asserted.
+
+Running this program will re-enable the flash. After running it you
+will be able to use xflash again. 
