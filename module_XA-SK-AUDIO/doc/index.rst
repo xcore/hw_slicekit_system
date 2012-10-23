@@ -1,5 +1,5 @@
-XA-SK-AUDIO: Audio Card with Midi and S/PDIF
---------------------------------------------
+XA-SK-AUDIO Slice Cadr hardware Guide
+-------------------------------------
 
 .. toctree::
 

@@ -1,5 +1,5 @@
-XA-SK-GPIO: General Purpose IO Slice Card
------------------------------------------
+XA-SK-GPIO Slice Card Hardware Guide
+------------------------------------
 
 .. toctree::
 

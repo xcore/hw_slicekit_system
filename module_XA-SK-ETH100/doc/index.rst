@@ -1,5 +1,5 @@
-XA-SK-ETH100: 10/100 Ethernet Slice Card
-----------------------------------------
+XA-SK-ETH100 Slice Card Hardware Guide
+--------------------------------------
 
 .. toctree::
 

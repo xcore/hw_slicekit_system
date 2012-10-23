@@ -1,5 +1,5 @@
-XA-SK-SDRAM: SDRAM Slice Card Hardware Guide
---------------------------------------------
+XA-SK-SDRAM Slice Card hardware Guide
+-------------------------------------
 
 .. toctree::
 

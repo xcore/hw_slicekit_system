@@ -1,5 +1,5 @@
-XA-SK-UART-8: Multi-UART Slice Card
------------------------------------
+XA-SK-UART-8 Slice Card Hardware Guide
+--------------------------------------
 
 .. toctree::
 
