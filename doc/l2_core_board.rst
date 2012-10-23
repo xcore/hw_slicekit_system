@@ -1,9 +1,11 @@
 L2 Slicekit Core Board
 ======================
 
-This board contains the XMOS device plus support circuitry to form the core of the system.
+This board contains the XMOS device plus support circuitry.
 
 A single XS1-L2-QF144 device has all of its GPIO connected to the Slots. 
+
+.. image:: images/l2_core_board.svg
 
 Multiple Core Boards
 --------------------
@@ -39,14 +41,14 @@ The JTAG signals are connected as shown below.
 
 Presence detect signals are present on both the ``Chain`` Connector and ``Square`` Slot connectors to allow detection of a connected board and subsequent automatic switching of the JTAG chain.  In a system of multiple Core Boards, the Master is the source of the JTAG chain so the system can only be debugged from the master. Other boards will see no devices in the JTAG chain.
 
-The use of XScope is covered in the XMOS Links section. The XScope XMOS Link can be either enabled or disabled via a switch on the XTAG2 adapter board.
+The use of XScope is covered in the XMOS Links section. The XScope XMOS Link can be either enabled or disabled via a switch on the XSYS adapter board.
 
 L2 Boot
 -------
 
 Master Core Boards boot from SPI flash, while slave Core Boards boot from XMOS link ``XLB`` from the next connected Core Board. 
 
-To allow re-use of the SPI boot pins (ports 1A, 1B, 1C, 1D) as signal IO pins for the ``Star`` slot, a latched bus switch is used which connects the XCore SPI pins to either the SPI Flash or to the Slice Card Slots. The switch is controlled by X0D42 and X0D43 (P8D6 and P8D7 on Tile 0: e.g. on the ``Triangle`` slot). Once the device has booted X0D43 is used to enable or disable the SPI interface, X0D42 should then transistion from low to high to latch the selection. The SPI selection state is then maintained until the system is reset. 
+To allow re-use of the SPI boot pins (ports 1A, 1B, 1C, 1D) as signal IO pins for the ``Star`` slot, a latched bus switch is used which connects the xCore SPI pins to either the SPI Flash or to the Slice Card Slots. The switch is controlled by X0D42 and X0D43 (P8D6 and P8D7 on Tile 0: e.g. on the ``Triangle`` slot). Once the device has booted X0D43 is used to enable or disable the SPI interface, X0D42 should then transistion from low to high to latch the selection. The SPI selection state is then maintained until the system is reset. 
 
 .. image:: images/spiselectflow.svg
 
@@ -65,10 +67,12 @@ The Chain Connector contains two 5-bit XMOS Links, XLA and XLB, which can be use
 
 The only complication in this system is use of the XScope 2-bit XMOS Link. This link overlaps a 4 bit port on the Star Slot connector so it would not be possible to use this for user IO at the same time as XScope. 
 
-To work around this, a switch is present on the XTAG2 adapter board to either enable or disable the XScope XMOS Link. 
+To work around this, a switch is present on the XSYS adapter board to either enable or disable the XScope XMOS Link. 
 When disabled, these pins are disconnected from the ``Chain`` Connector and are free for use on the ``Star`` Slot. When enabled they will work as an XMOS link and hence will appear on the relevant pins of the ``Star`` Slot. 
 
-.. warning:: It is recommended that if a Slice Card is used in the Star Slot the XScope switch is off on the XTAG Adaptor Card to ensure correct operation of the Slice Card in the ``Star`` slot.
+.. image:: images/xsys_detail.svg
+
+.. warning:: It is recommended that if a Slice Card is used in the Star Slot the XScope switch is off on the XSYS Adaptor Card to ensure correct operation of the Slice Card in the ``Star`` slot.
 
 
 Reset
@@ -86,6 +90,8 @@ There are two sources for the system clock: an on-board 25MHz oscillator or the 
 This means the system clock from a Master Core Board is fed automatically to all of the slave Core Boards so the whole system will operate synchronously.
 
 The system clock is also fed to each of the Slice Card Slots.
+
+.. _sec_IO_crossref:
 
 Testpoints
 ----------
