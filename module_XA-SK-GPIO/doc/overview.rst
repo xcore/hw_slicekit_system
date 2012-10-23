@@ -6,8 +6,6 @@ Pack Contents
 
    * One XA-SK-GPIO Slice Card
 
-.. image:: images/serial320.png
-    
 GPIO Access Features
 --------------------
 

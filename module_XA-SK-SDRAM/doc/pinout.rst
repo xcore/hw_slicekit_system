@@ -6,9 +6,9 @@ This table shows the port mapping for each of the Slice Card Signal IO, and the 
 =================== ========= ======== ======== ======= ===============================
 Function            STAR      TRIANGLE SQUARE   PIN     Description
 =================== ========= ======== ======== ======= ===============================
-SD_WE#              1C        1K       1C       B10     SDRAM Write Enable
-SD_CAS#             1B        1J       1B       A8      SDRAM CAS
-SD_RAS#             1G        1I       1G       B15     SDRAM RAS
+SD_WE               1C        1K       1C       B10     SDRAM Write Enable
+SD_CAS              1B        1J       1B       A8      SDRAM CAS
+SD_RAS              1G        1I       1G       B15     SDRAM RAS
 SD_CLK              1F        1L       1F       A15     SDRAM Clock drivern from XCore
 SD_ADQ0             A0        B0       A0       B6      SDRAM Address and Data 
 SD_ADQ1             A1        B1       A1       B7      SDRAM Address and Data 
@@ -26,7 +26,8 @@ SD_ADQ12            A12       B12      A12      A17     SDRAM Address and Data
 SD_DQ13/BA0         A13       B13      A13      A18     SDRAM Bank Address and Data
 SD_DQ14/BA1         A14       B14      A14      A12     SDRAM Bank Address and Data
 SD_DQ15             A15       B15      A15      A13     SDRAM Data
-=================== ========= ======== ======== ======= ================================
+=================== ========= ======== ======== ======= ===============================
+
 
 
    

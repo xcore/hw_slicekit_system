@@ -1,11 +1,11 @@
-XA-SK-UART-8: Multi-UART Slice Card
------------------------------------
+XA-SK-SDRAM: SDRAM Slice Card Hardware Guide
+--------------------------------------------
 
 .. toctree::
 
    overview.rst
    pinout.rst
-   collateral.rst
+   
 
 
 

@@ -6,8 +6,6 @@ Pack Contents
 
    * One XA-SK-SDRAM Slice Card
 
-.. image:: images/serial320.png
-    
 Random Access Memory
 --------------------
 

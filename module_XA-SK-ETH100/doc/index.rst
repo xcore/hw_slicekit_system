@@ -1,11 +1,11 @@
-XA-SK-UART-8: Multi-UART Slice Card
------------------------------------
+XA-SK-ETH100: 10/100 Ethernet Slice Card
+----------------------------------------
 
 .. toctree::
 
    overview.rst
    pinout.rst
-   collateral.rst
+
 
 
 
