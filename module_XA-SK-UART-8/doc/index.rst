@@ -5,7 +5,7 @@ XA-SK-UART-8: Multi-UART Slice Card
 
    overview.rst
    pinout.rst
-   collateral.rst
+
 
 
 

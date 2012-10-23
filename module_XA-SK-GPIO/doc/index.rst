@@ -5,6 +5,6 @@ XA-SK-GPIO: General Purpose IO Slice Card
 
    overview.rst
    pinout.rst
-   collateral.rst
+
 
 

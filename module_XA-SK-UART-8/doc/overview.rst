@@ -5,9 +5,6 @@ Pack Contents
 -------------
 
    * One XA-SK-UART-8 Slice Card
-   * One RS232 parallel cable with DB9 connector
-
-.. image:: images/serial320.png
     
 RS232 Capability
 ----------------

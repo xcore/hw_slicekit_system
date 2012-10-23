@@ -6,8 +6,6 @@ Pack Contents
 
    * One XA-SK-AUDIO Slice Card
 
-.. image:: images/a.png
-    
 4 Channel Audio
 ----------------
 
