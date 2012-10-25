@@ -5,5 +5,7 @@ Evaluating and developing with xCORE multicore microcontrollers is easy thanks t
  
 The sliceKIT core board features our 16 core L2 device to deliver the deterministic, responsive processing required to handle a variety of peripheral interfaces, data processing and control tasks. 
 
-This repository contains the original source files for sliceKIT documents and collateral presented at the `Discover sliceKIT page <http://www.xmos.com/discover/products/xkits/slicekit#tabs/>'_. 
+This repository contains the original source files for sliceKIT documents and collateral presented at the Discover sliceKIT page: 
+
+http://www.xmos.com/discover/products/xkits/slicekit#tabs
 
