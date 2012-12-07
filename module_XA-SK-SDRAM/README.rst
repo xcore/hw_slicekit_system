@@ -26,11 +26,13 @@ FIXME: Stand Alone Demo Quick Start Guide LINK:https://github.com/xcore/sc_sdram
 
 FIXME: HW Guide LINK:hw_sliceKIT_system/module_XA-SK-SDRAM/doc/
 
-FIXME: ../files/schematic.pdf
+FIXME: ../files/XA-SK-SDRAM-SCH.pdf
 
-FIXME: ../files/layout.pdf
+FIXME: ../files/XA-SK-SDRAM-PCB.pdf
 
-FIXME: ../files/BOM.xls
+FIXME: ../files/XA-SK-SDRAM-BOM.xls
+
+FIXME: ../files/XA-SK-SDRAM-FILES.zip
 
 FIXME: Related IP LINK: https://github.com/xcore/sc_ethernet/tree/master/sc_sdram_burst
 
