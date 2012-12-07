@@ -27,11 +27,13 @@ FIXME: Stand Alone Demo Quick Start Guide LINK:https://github.com/xcore/sc_i2s
 
 FIXME: HW Guide LINK:hw_sliceKIT_system/module_XA-SK-AUDIO/doc/
 
-FIXME: ../files/schematic.pdf
+FIXME: ../files/XA-SK-AUDIO-SCH.pdf
 
-FIXME: ../files/layout.pdf
+FIXME: ../files/XA-SK-AUDIO-PCB.pdf
 
-FIXME: ../files/BOM.xls
+FIXME: ../files/XA-SK-AUDIO-BOM.xls
+
+FIXME: ../files/XA-SK-AUDIO-Files.zip
 
 FIXME: Related IP LINK: https://github.com/xcore/sw_audio_effects
 
