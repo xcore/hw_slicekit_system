@@ -24,11 +24,13 @@ FIXME: Stand Alone Demo Quick Start Guide LINK:https://github.com/xcore/sc_xtcp/
 
 FIXME: HW Guide LINK:hw_sliceKIT_system/module_XA-SK-ETH100/doc/
 
-FIXME: ../files/schematic.pdf
+FIXME: ../files/XA-SK-E100-SCH.pdf
 
-FIXME: ../files/layout.pdf
+FIXME: ../files/XA-SK-E100-PCB.pdf
 
-FIXME: ../files/BOM.xls
+FIXME: ../files/XA-SK-E100-BOM.xls
+
+FIXME: ../files/XA-SK-E100-Files.zip
 
 FIXME: Related IP LINK: https://github.com/xcore/sc_ethernet/tree/master/module_mii_singlethread_server
 
