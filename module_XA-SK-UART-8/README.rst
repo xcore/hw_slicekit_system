@@ -27,11 +27,13 @@ FIXME: Stand Alone Demo Quick Start Guide LINK:https://github.com/xcore/sc_multi
 
 FIXME: HW Guide LINK:hw_sliceKIT_system/module_XA-SK-UART8/doc/
 
-FIXME: ../files/schematic.pdf
+FIXME: ../files/XA-SK-UART-8-SCH.pdf
 
-FIXME: ../files/layout.pdf
+FIXME: ../files/XA-SK-UART-8-PCB.pdf
 
-FIXME: ../files/BOM.xls
+FIXME: ../files/XA-SK-UART-8-BOM.xls
+
+FIXME: ../files/XA-SK-UART-8-Files.zip
 
 FIXME: Related IP LINK: https://github.com/xcore/sc_multi_uart
 
