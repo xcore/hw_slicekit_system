@@ -1,0 +1,32 @@
+\contentsline {chapter}{\chapternumberline {1}Overview}{3}{chapter.1}
+\contentsline {section}{\numberline {1.1}Introduction}{3}{section.1.1}
+\contentsline {section}{\numberline {1.2}sliceKIT system layout}{4}{section.1.2}
+\contentsline {chapter}{\chapternumberline {2}Core Board}{6}{chapter.2}
+\contentsline {section}{\numberline {2.1}Multiple Core Boards}{7}{section.2.1}
+\contentsline {section}{\numberline {2.2}Setup}{7}{section.2.2}
+\contentsline {section}{\numberline {2.3}Power Supply}{7}{section.2.3}
+\contentsline {section}{\numberline {2.4}Debug}{7}{section.2.4}
+\contentsline {section}{\numberline {2.5}A16 Boot}{8}{section.2.5}
+\contentsline {section}{\numberline {2.6}XMOS Links}{9}{section.2.6}
+\contentsline {section}{\numberline {2.7}Reset}{9}{section.2.7}
+\contentsline {section}{\numberline {2.8}Clocking}{10}{section.2.8}
+\contentsline {section}{\numberline {2.9}Testpoints}{10}{section.2.9}
+\contentsline {section}{\numberline {2.10}Slot pinouts}{13}{section.2.10}
+\contentsline {subsection}{\numberline {2.10.1}STAR}{13}{subsection.2.10.1}
+\contentsline {subsection}{\numberline {2.10.2}SQUARE}{15}{subsection.2.10.2}
+\contentsline {subsection}{\numberline {2.10.3}TRIANGLE}{17}{subsection.2.10.3}
+\contentsline {subsection}{\numberline {2.10.4}CIRCLE}{19}{subsection.2.10.4}
+\contentsline {subsection}{\numberline {2.10.5}CHAIN}{21}{subsection.2.10.5}
+\contentsline {subsection}{\numberline {2.10.6}MIXED SIGNAL}{23}{subsection.2.10.6}
+\contentsline {subsection}{\numberline {2.10.7}System Services Slot Signals}{24}{subsection.2.10.7}
+\contentsline {chapter}{\chapternumberline {3}Slice Cards and Slots}{25}{chapter.3}
+\contentsline {chapter}{\chapternumberline {4}Designing a Slice Card}{26}{chapter.4}
+\contentsline {section}{\numberline {4.1}Power}{26}{section.4.1}
+\contentsline {section}{\numberline {4.2}Signal IO}{26}{section.4.2}
+\contentsline {section}{\numberline {4.3}Slice Card Form Factors}{27}{section.4.3}
+\contentsline {section}{\numberline {4.4}Connector Pinouts}{28}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}STAR}{28}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}SQUARE}{29}{subsection.4.4.2}
+\contentsline {subsection}{\numberline {4.4.3}TRIANGLE}{30}{subsection.4.4.3}
+\contentsline {subsection}{\numberline {4.4.4}CIRCLE}{31}{subsection.4.4.4}
+\contentsline {subsection}{\numberline {4.4.5}MIXED SIGNAL}{32}{subsection.4.4.5}

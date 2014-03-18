@@ -1,0 +1,55 @@
+Building documentation target 'xdehtml' in doc_a16
+    Run 'git stash' in C:\Users\edward\.xdoc\docs_xref
+         No local changes to save
+    Run 'git pull' in C:\Users\edward\.xdoc\docs_xref
+         Already up-to-date.
+    Run 'git config --get remote.origin.url' in .
+         git://github.com/xcore/hw_slicekit_system.git
+    Run 'git rev-parse --show-prefix' in Z:\git\hw_slicekit_system\doc_a16
+         doc_a16/
+    Run 'git pull' in C:\Users\edward\.xdoc\docs_xref
+         Already up-to-date.
+    Found document info for 'A16 sliceKIT Hardware Manual'
+    Run 'git pull' in C:\Users\edward\.xdoc\docs_xref
+         Already up-to-date.
+    Run 'git add *.xml' in C:\Users\edward\.xdoc\docs_xref
+    Run 'git update-index -q --refresh' in C:\Users\edward\.xdoc\docs_xref
+    Run 'git diff-index --name-only HEAD --' in C:\Users\edward\.xdoc\docs_xref
+    Processing document structure for xref database
+    Processing TOC for XMOS xref database
+    Run 'git stash' in C:\Users\edward\.xdoc\docs_xref
+         No local changes to save
+    Run 'git pull' in C:\Users\edward\.xdoc\docs_xref
+         Already up-to-date.
+    Run 'git config --get remote.origin.url' in .
+         git://github.com/xcore/hw_slicekit_system.git
+    Run 'git rev-parse --show-prefix' in Z:\git\hw_slicekit_system\doc_a16
+         doc_a16/
+    Run 'git pull' in C:\Users\edward\.xdoc\docs_xref
+         Already up-to-date.
+    Run 'git pull' in C:\Users\edward\.xdoc\docs_xref
+         Already up-to-date.
+    Run 'git pull' in C:\Users\edward\.xdoc\docs_xref
+         Already up-to-date.
+    Run 'git pull' in C:\Users\edward\.xdoc\docs_xref
+         Already up-to-date.
+    Run 'git pull' in C:\Users\edward\.xdoc\docs_xref
+         Already up-to-date.
+    Run 'git add *.xml' in C:\Users\edward\.xdoc\docs_xref
+    Run 'git update-index -q --refresh' in C:\Users\edward\.xdoc\docs_xref
+    Run 'git diff-index --name-only HEAD --' in C:\Users\edward\.xdoc\docs_xref
+    Running Sphinx
+    Run 'git rev-parse --show-toplevel' in .
+         Z:/git/hw_slicekit_system
+    Run 'git rev-parse --show-prefix' in .
+         doc_a16/
+    Run 'git stash' in C:\Users\edward\.xdoc\docs_xref
+         No local changes to save
+    Run 'git pull' in C:\Users\edward\.xdoc\docs_xref
+         Already up-to-date.
+    Run 'git config --get remote.origin.url' in .
+         git://github.com/xcore/hw_slicekit_system.git
+    Run 'git rev-parse --show-prefix' in Z:\git\hw_slicekit_system\doc_a16
+         doc_a16/
+    Removing excess files
+    Build Complete

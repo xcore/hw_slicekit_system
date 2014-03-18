@@ -1,0 +1,338 @@
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/W32TeX)
+ \write18 enabled.
+entering extended mode
+(z:/git/hw_slicekit_system/doc_a16/_build/xlatex/xmos_texfile.tex
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, dumylang, nohyphenation, lo
+aded.
+(z:/git/hw_slicekit_system/doc_a16/_build/xlatex/index.tex
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/xdoc/texinputs/xmosmodern.cls
+Document Class: xmosmodern 2010/12/10 v3.0b XMOS Modern Style Class
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/xdoc/texinputs/memoir.cls
+Document Class: memoir 2010/02/20 v1.618033988c configurable book, report, arti
+cle document class
+
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/tex/generic/o
+berdiek/ifpdf.sty)
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/tex/generic/i
+fxetex/ifxetex.sty)
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/tex/generic/o
+berdiek/ifluatex.sty)
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/tex/latex/ete
+x-pkg/etex.sty)
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/xdoc/texinputs/mem9.clo)
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/xdoc/texinputs/mempatch.sty))
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/tex/latex/too
+ls/calc.sty)
+
+******************************************************
+Stock height and width: 668.63976pt by 506.45905pt
+Top and edge trims: 0.0pt and 0.0pt
+Page height and width: 668.63976pt by 506.45905pt
+Text height and width: 519.0pt by 341.0pt
+Spine and edge margins: 113.81102pt and 51.21497pt
+Upper and lower margins: 71.13188pt and 78.50787pt
+Headheight and headsep: 10.0pt and 20.0pt
+Footskip: 20.0pt
+Columnsep and columnseprule: 10.0pt and 0.0pt
+Marginparsep and marginparwidth: 11.38109pt and 51.21495pt
+Sidecapsep and sidecapwidth: 7.0pt and 85.0pt
+Sidebarhsep and sidebarwidth: 7.0pt and 85.0pt
+Sidebarvsep and sidebartopsep: 10.0pt and 0.0pt
+Sidebarheight: 546.99997pt
+Sidefoothsep and sidefootwidth: 7.0pt and 85.0pt
+Sidefootvsep and sidefootheight: 10.0pt and 546.99997pt
+******************************************************
+
+
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/tex/latex/gra
+phics/graphicx.sty
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/tex/latex/gra
+phics/keyval.sty)
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/tex/latex/gra
+phics/graphics.sty
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/tex/latex/gra
+phics/trig.sty)
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/tex/latex/lat
+exconfig/graphics.cfg)
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/tex/latex/pdf
+tex-def/pdftex.def
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/tex/generic/o
+berdiek/infwarerr.sty)
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/tex/generic/o
+berdiek/ltxcmds.sty))))
+Writing index file xmos_texfile.idx 
+
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/tex/latex/ams
+math/amsmath.sty
+For additional information on amsmath, use the `?' option.
+
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/tex/latex/ams
+math/amstext.sty
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/tex/latex/ams
+math/amsgen.sty))
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/tex/latex/ams
+math/amsbsy.sty)
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/tex/latex/ams
+math/amsopn.sty))
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/tex/latex/pst
+ool/pstool.sty
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/tex/generic/o
+berdiek/catchfile.sty
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/tex/generic/o
+berdiek/etexcmds.sty))
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/tex/latex/gra
+phics/color.sty
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/tex/latex/lat
+exconfig/color.cfg))
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/xdoc/texinputs/ifplatform.sty
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/tex/generic/o
+berdiek/pdftexcmds.sty))
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/xdoc/texinputs/psfrag.sty)
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/xdoc/texinputs/suffix.sty)
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/xdoc/texinputs/xkeyval.sty
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/tex/generic/x
+keyval/xkeyval.tex)))
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/xdoc/texinputs/microtype.sty
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/tex/latex/mic
+rotype/microtype.cfg))
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/xdoc/texinputs/stmaryrd.sty)
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/tex/latex/bas
+e/alltt.sty)
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/tex/latex/ams
+fonts/amsfonts.sty)
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/tex/latex/too
+ls/multicol.sty)
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/tex/latex/bas
+e/ifthen.sty)
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/tex/latex/too
+ls/longtable.sty)
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/tex/latex/bas
+e/textcomp.sty
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/tex/latex/bas
+e/ts1enc.def))
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/xdoc/texinputs/url.sty)
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/xdoc/texinputs/listings.sty
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/tex/latex/lis
+tings/lstmisc.sty)
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/tex/latex/lis
+tings/listings.cfg))
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/xdoc/texinputs/gensymb.sty)
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/tex/latex/man
+fnt/manfnt.sty)
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/tex/latex/psn
+fss/pifont.sty
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/tex/latex/psn
+fss/upzd.fd)
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/tex/latex/psn
+fss/upsy.fd))
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/tex/latex/too
+ls/xspace.sty)
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/xdoc/texinputs/multirow.sty)
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/tex/latex/col
+ortbl/colortbl.sty)
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/tex/latex/too
+ls/varioref.sty)
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/tex/latex/bas
+e/fixltx2e.sty)
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/xdoc/texinputs/enumitem.sty)
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/xdoc/texinputs/placeins.sty)
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/tex/latex/bas
+e/flafter.sty)
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/xdoc/texinputs/float.sty)
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/xdoc/texinputs/marginnote.sty)
+
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/tex/latex/lay
+outs/layouts.sty)
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/tex/latex/uni
+ts/units.sty
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/tex/latex/uni
+ts/nicefrac.sty))
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/tex/latex/sav
+esym/savesym.sty
+
+LaTeX Warning: You have requested package `savesym',
+               but the package provides `savesymbol'.
+
+) (c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/xdoc/texinputs/marvosym.sty)
+
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/tex/latex/bbd
+ing/bbding.sty)
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/tex/latex/din
+gbat/dingbat.sty)
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/tex/latex/hyp
+erref/hyperref.sty
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/tex/generic/o
+berdiek/hobsub-hyperref.sty
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/tex/generic/o
+berdiek/hobsub-generic.sty))
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/tex/latex/obe
+rdiek/auxhook.sty)
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/tex/latex/obe
+rdiek/kvoptions.sty)
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/tex/latex/hyp
+erref/pd1enc.def)
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/tex/latex/lat
+exconfig/hyperref.cfg))
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/xdoc/texinputs/memhfixc.sty)
+
+Package hyperref Message: Driver (autodetected): hpdftex.
+
+
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/tex/latex/hyp
+erref/hpdftex.def
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/tex/latex/obe
+rdiek/rerunfilecheck.sty))
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/xdoc/texinputs/lastpage.sty)
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/tex/latex/too
+ls/afterpage.sty)
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/tex/latex/bas
+e/fontenc.sty
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/tex/latex/bas
+e/t1enc.def))
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-local/tex/latex/lu
+cidabr/lucidabr.sty
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-local/tex/latex/lu
+cida/t1hls.fd))
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/xdoc/texinputs/upquote.sty)
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/xdoc/texinputs/terminology.tex
+) (c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/xdoc/texinputs/bib.tex))
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/tex/latex/bas
+e/inputenc.sty
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/tex/latex/bas
+e/utf8.def
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/tex/latex/bas
+e/t1enc.dfu)
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/tex/latex/bas
+e/ot1enc.dfu)
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/tex/latex/bas
+e/omsenc.dfu)
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/tex/latex/bas
+e/ts1enc.dfu)))
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/xdoc/texinputs/xsphinx.sty
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/xdoc/texinputs/framed.sty)
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/xdoc/texinputs/fancyvrb.sty
+Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix 
+<2008/02/07> (tvz))
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/xdoc/texinputs/threeparttable.
+sty))
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/xdoc/texinputs/indent.sty)
+Writing index file xmos_texfile.idx 
+(z:/git/hw_slicekit_system/doc_a16/_build/xlatex/xmos_texfile.aux)
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/tex/latex/bas
+e/ts1cmr.fd)
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-local/tex/latex/lu
+cidabr/lmrhlcm.fd)
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/tex/context/b
+ase/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+)
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/tex/latex/obe
+rdiek/epstopdf-base.sty
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/tex/latex/obe
+rdiek/grfext.sty)
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/tex/latex/lat
+exconfig/epstopdf-sys.cfg))
+
+Package layouts Warning: Layout scale set to 0.5 on input line 30.
+
+
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/tex/latex/hyp
+erref/nameref.sty
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/tex/generic/o
+berdiek/gettitlestring.sty))
+(z:/git/hw_slicekit_system/doc_a16/_build/xlatex/xmos_texfile.out)
+(z:/git/hw_slicekit_system/doc_a16/_build/xlatex/xmos_texfile.out)
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-local/tex/latex/lu
+cida/ts1hls.fd) <xmoslogo18pt.pdf, id=132, 54.06036pt x 15.07974pt>
+<use xmoslogo18pt.pdf> [1
+Non-PDF special ignored!{c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/
+texmf-var/fonts/map/pdftex/updmap/pdftex.map} <c:/Program Files (x86)/XMOS/xSof
+tIPTools/1.0.18/xdoc/texinputs/xmoslogo18pt.pdf>]
+(z:/git/hw_slicekit_system/doc_a16/_build/xlatex/xmos_texfile.toc
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-local/tex/latex/lu
+cida/t1hlh.fd)
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-local/tex/latex/lu
+cidabr/omlhlcm.fd)
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-local/tex/latex/lu
+cidabr/omshlcy.fd)
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-local/tex/latex/lu
+cidabr/omxhlcv.fd)
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/tex/latex/mic
+rotype/mt-cmr.cfg)
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/tex/latex/ams
+fonts/umsa.fd)
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/tex/latex/mic
+rotype/mt-msa.cfg)
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/tex/latex/ams
+fonts/umsb.fd)
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/tex/latex/mic
+rotype/mt-msb.cfg)) <use xmoslogo18pt.pdf> [2]
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/tex/latex/mar
+vosym/umvs.fd)
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/tex/latex/mic
+rotype/mt-mvs.cfg)
+Underfull \hbox (badness 10000) in paragraph at lines 49--49
+
+
+(c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/tex/latex/bas
+e/t1cmtt.fd) <use xmoslogo18pt.pdf> [3]
+<slicekitlayout.pdf, id=206, 1388.18625pt x 1589.94pt>
+<use slicekitlayout.pdf> <use xmoslogo18pt.pdf> [4 <z:/git/hw_slicekit_system/d
+oc_a16/_build/xlatex/slicekitlayout.pdf>] <use xmoslogo18pt.pdf> [5]
+Underfull \hbox (badness 10000) in paragraph at lines 108--108
+
+<a16_core_board.pdf, id=237, 845.1575pt x 597.23125pt>
+<use a16_core_board.pdf> <use xmoslogo18pt.pdf> [6 <z:/git/hw_slicekit_system/d
+oc_a16/_build/xlatex/a16_core_board.pdf>]
+<jtagchain.pdf, id=263, 321.2pt x 240.9pt> <use jtagchain.pdf>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<use xmoslogo18pt.pdf> [7]
+<spiselectflow.pdf, id=270, 362.1922pt x 474.6122pt> <use spiselectflow.pdf>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<warnmargin.pdf, id=271, 19.91692pt x 19.91692pt> <use warnmargin.pdf>
+<use xmoslogo18pt.pdf> [8 <z:/git/hw_slicekit_system/doc_a16/_build/xlatex/jtag
+chain.pdf> <c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/xdoc/texinputs/warn
+margin.pdf>] <use warnmargin.pdf> <use xmoslogo18pt.pdf> [9 <z:/git/hw_slicekit
+_system/doc_a16/_build/xlatex/spiselectflow.pdf>] <use xmoslogo18pt.pdf>
+[10] <use xmoslogo18pt.pdf> [11]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 1 on input line 397.
+
+<use xmoslogo18pt.pdf> [12] <use xmoslogo18pt.pdf> [13] <use xmoslogo18pt.pdf>
+[14] <use xmoslogo18pt.pdf> [15] <use xmoslogo18pt.pdf> [16]
+<use xmoslogo18pt.pdf> [17] <use xmoslogo18pt.pdf> [18] <use xmoslogo18pt.pdf>
+[19] <use xmoslogo18pt.pdf> [20] <use xmoslogo18pt.pdf> [21]
+<use xmoslogo18pt.pdf> [22] <use xmoslogo18pt.pdf> [23] <use xmoslogo18pt.pdf>
+[24] <use warnmargin.pdf> <use xmoslogo18pt.pdf> [25]
+Underfull \hbox (badness 10000) in paragraph at lines 820--820
+
+<use xmoslogo18pt.pdf> [26]
+<slicecarddetail.pdf, id=409, 350.01462pt x 290.25323pt>
+<use slicecarddetail.pdf> <use xmoslogo18pt.pdf> [27 <z:/git/hw_slicekit_system
+/doc_a16/_build/xlatex/slicecarddetail.pdf>] <use xmoslogo18pt.pdf> [28]
+<use xmoslogo18pt.pdf> [29] <use xmoslogo18pt.pdf> [30]
+Underfull \vbox (badness 10000) has occurred while \output is active
+<use xmoslogo18pt.pdf> [31] <use xmoslogo18pt.pdf>
+AED: lastpage setting LastPage [32]
+
+Package longtable Warning: Table widths have changed. Rerun LaTeX.
+
+(z:/git/hw_slicekit_system/doc_a16/_build/xlatex/xmos_texfile.aux) ) )
+(see the transcript file for additional information){c:/Program Files (x86)/XMO
+S/xSoftIPTools/1.0.18/latex/texmf-dist/fonts/enc/dvips/base/8r.enc}{c:/Program 
+Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/fonts/enc/dvips/cm-super/
+cm-super-t1.enc}<c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-lo
+cal/fonts/type1/bh/lucida/lsd.pfb><c:/Program Files (x86)/XMOS/xSoftIPTools/1.0
+.18/latex/texmf-local/fonts/type1/bh/lucida/lsi.pfb><c:/Program Files (x86)/XMO
+S/xSoftIPTools/1.0.18/latex/texmf-local/fonts/type1/bh/lucida/lsr.pfb><c:/Progr
+am Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/fonts/type1/public/mar
+vosym/marvosym.pfb><c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf
+-dist/fonts/type1/public/cm-super/sftt0900.pfb>
+Output written on xmos_texfile.pdf (32 pages, 2134335 bytes).
+Transcript written on xmos_texfile.log.

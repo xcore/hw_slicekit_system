@@ -1,0 +1,39 @@
+Running Sphinx v1.0.7
+!!!!!!!
+C:\Program Files (x86)\XMOS\xSoftIPTools\1.0.18\xdoc\docutils\writers\html4css1\html4css1.css
+Running XMOS Documentation setup:xdehtml
+loading pickled environment... not yet created
+building [xdehtml]: all documents
+updating environment: 5 added, 0 changed, 0 removed
+reading sources... [ 20%] a16_core_board
+reading sources... [ 40%] design_your_own
+reading sources... [ 60%] index
+reading sources... [ 80%] overview
+reading sources... [100%] slice_cards
+
+looking for now-outdated files... none found
+pickling environment... done
+checking consistency... done
+preparing documents... done
+['index', 'a16_core_board', 'slice_cards', 'overview', 'design_your_own']
+writing output... [ 20%] a16_core_board
+Adding scope descriptions
+writing output... [ 40%] design_your_own
+Adding scope descriptions
+writing output... [ 60%] index
+Adding scope descriptions
+writing output... [ 80%] overview
+Adding scope descriptions
+writing output... [100%] slice_cards
+Adding scope descriptions
+
+writing additional files...
+copying images... [ 20%] images/a16_core_board.PNG
+copying images... [ 40%] images\spiselectflow.svg
+copying images... [ 60%] images\slicekitlayout.svg
+copying images... [ 80%] images\slicecarddetail.svg
+copying images... [100%] images\jtagchain.svg
+
+copying static files... done
+dumping object inventory... done
+build succeeded.

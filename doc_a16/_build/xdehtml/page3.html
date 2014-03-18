@@ -1,0 +1,847 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Designing a Slice Card &mdash; A16 sliceKIT Hardware Manual v documentation</title>
+
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/globals.css"  type="text/css" />
+    <link rel="stylesheet" href="_static/ui.css" type="text/css" />
+    <link rel="stylesheet" href="_static/app.css"  type="text/css" />
+    <link rel="stylesheet" href="_static/mobile.css"  type="text/css" />
+    <link rel="stylesheet" href="_static/xde.css"
+    type="text/css" /><script type="text/javascript" src="_static/scripts.js"></script>
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="A16 sliceKIT Hardware Manual v documentation" href="index.html" />
+    <link rel="prev" title="Slice Cards and Slots" href="page2.html" /> 
+  </head>
+  <body class="xde indented-content" onload="prepareContents();">  
+          <div id="body">
+             <div id="content">
+             <h1>Designing a Slice Card</h1>
+
+             <div class='columns'>
+            
+  <h2 class="topic" id="power">Power</h2>
+<div><p>Slice Cards have two power supplies available to them, 5V and 3V3.
+The 5V supply can range from 4.75V to 5.25V (5%) at a current of up to 0.25A per slice.
+The 3V3 supply can range from 3.13V to 3.47V (5%) at a current of up to 0.25A per slice.</p>
+</div><h2 class="topic" id="signal-io">Signal IO</h2>
+<div><p>A single Slice Card connector has 36 contacts. The four types of slice have a number of common pins which are described below.</p>
+<ul>
+<li>GND. Power supply ground.</li>
+<li>5V. 5V power supply input.</li>
+<li>3V3. 3.3V power supply input.</li>
+<li>NC. Not connected.</li>
+<li>CLK. System clock input. 25MHz.</li>
+<li>RST_N. System reset input, active low. Push-Pull drive.</li>
+</ul>
+<p>The other available pins are connected to xCore Processor IOs as shown in the pinout tables.</p>
+<p>Slice Cards can take their power from either 5V or 3V3 or both. Slice Cards should draw no more than 250mA from each supply.</p>
+<p>At system power-on, the 5V supply will power up first, followed by the 3V3 supply. The system reset signal will de-assert a short time after this.</p>
+<p>Due to the constraints on the sliceKIT Core Board, there are some ports on the Slice Cards which should be used in preference to others. These constraints are as follows:</p>
+<ul>
+<li>X0D4-7 can be selected for use as the XScope XMOS Link</li>
+<li>X0D0,1,10,11 could be used for SPI boot on a master core board. These pins will be hi-z when booting and can be transferred to the XCore IO signals when boot is complete.</li>
+</ul>
+<p>For Slice Cards intended for use in the <tt class="docutils literal"><span class="pre">Star</span></tt> Slot, P4B should be avoided with the knowledge that using it means XScope can not be used if the Slice Card is plugged into the <tt class="docutils literal"><span class="pre">Star</span></tt> Slot.</p>
+</div><h2 class="topic" id="slice-card-form-factors">Slice Card Form Factors</h2>
+<div><p>The Slice Cards use a standard PCIe x1 edge finger to connect to the sliceKIT Core Board. Because of this, all Slice Card PCBs must be 1.6mm thick.</p>
+<p>There is no hard specification as to the length of Slice Cards as this poses no mechanical clashing hazard, however to avoid clashing with other Slice Cards or the power input connector Slice Cards should be limited to 40mm wide.</p>
+<p>Four mounting holes are specified in the corners of the slice for mechanical stability. These should be used with 6mm standoffs, example part Toby Electronics DCB-6.</p>
+<p>An optional retention hole is specified for use in securing the Slice Card to the sliceKIT Core Board. This is useful to ensure the Slice Cards is not accidentally unplugged when using the system.
+Typical usage uses a 2.54mm cable tie between this hole and the associated hole in the sliceKIT Core Board ensuring the Slice Card cannot be unplugged.</p>
+<div class="figure">
+<div class="caption"><span>Slice Card Detail</span></div>
+<object data="_images/slicecarddetail.svg" type="image/svg+xml" width="600"><embed src="_images/slicecarddetail.svg" type="image/svg+xml" width="600" /></object>
+</div>
+<p>Note that for quick, low cost boards using low cost PCB manufacturing, the chamfer is not required and can be generated by hand using a file or similar.</p>
+</div><h2 class="topic" id="connector-pinouts">Connector Pinouts</h2>
+<div><p>The pinouts of the four types of Slice Card are shown below. To cross reference pin numbers (eg. X0D1) to port names, see <a class="refexplicit reference" href="page1.html#sec-io-crossref"><span>here</span></a>:</p>
+<h3 id="star">STAR</h3>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="24%" />
+<col width="38%" />
+<col width="38%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head"><p>PIN</p>
+</th>
+<th class="head"><p>SIDE B
+(top)</p>
+</th>
+<th class="head"><p>SIDE A
+(bottom)</p>
+</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td><p>1</p>
+</td>
+<td><p>NC</p>
+</td>
+<td><p>NC</p>
+</td>
+</tr>
+<tr><td><p>2</p>
+</td>
+<td><p>NC</p>
+</td>
+<td><p><em>5V</em></p>
+</td>
+</tr>
+<tr><td><p>3</p>
+</td>
+<td><p><em>GND</em></p>
+</td>
+<td><p>NC</p>
+</td>
+</tr>
+<tr><td><p>4</p>
+</td>
+<td><p>NC</p>
+</td>
+<td><p>NC</p>
+</td>
+</tr>
+<tr><td><p>5</p>
+</td>
+<td><p><em>3V3</em></p>
+</td>
+<td><p><em>GND</em></p>
+</td>
+</tr>
+<tr><td><p>6</p>
+</td>
+<td><p>X0D2</p>
+</td>
+<td><p>X0D8</p>
+</td>
+</tr>
+<tr><td><p>7</p>
+</td>
+<td><p>X0D3</p>
+</td>
+<td><p>X0D9</p>
+</td>
+</tr>
+<tr><td><p>8</p>
+</td>
+<td><p><em>GND</em></p>
+</td>
+<td><p>X0D1</p>
+</td>
+</tr>
+<tr><td><p>9</p>
+</td>
+<td><p>X0D4</p>
+</td>
+<td><p>X0D6</p>
+</td>
+</tr>
+<tr><td><p>10</p>
+</td>
+<td><p>X0D10</p>
+</td>
+<td><p><em>GND</em></p>
+</td>
+</tr>
+<tr><td><p>11</p>
+</td>
+<td><p>X0D3</p>
+</td>
+<td><p>X0D7</p>
+</td>
+</tr>
+<tr><td colspan="3"><p><strong>MECHANICAL KEY</strong></p>
+</td>
+</tr>
+<tr><td><p>12</p>
+</td>
+<td><p>X0D14</p>
+</td>
+<td><p>X0D20</p>
+</td>
+</tr>
+<tr><td><p>13</p>
+</td>
+<td><p>X0D15</p>
+</td>
+<td><p>X0D21</p>
+</td>
+</tr>
+<tr><td><p>14</p>
+</td>
+<td><p><em>CLK</em></p>
+</td>
+<td><p><em>GND</em></p>
+</td>
+</tr>
+<tr><td><p>15</p>
+</td>
+<td><p>X0D22</p>
+</td>
+<td><p>X0D13</p>
+</td>
+</tr>
+<tr><td><p>16</p>
+</td>
+<td><p><em>GND</em></p>
+</td>
+<td><p><em>RST_N</em></p>
+</td>
+</tr>
+<tr><td><p>17</p>
+</td>
+<td><p>X0D16</p>
+</td>
+<td><p>X0D18</p>
+</td>
+</tr>
+<tr><td><p>18</p>
+</td>
+<td><p>X0D17</p>
+</td>
+<td><p>X0D19</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div><h3 id="square">SQUARE</h3>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="24%" />
+<col width="38%" />
+<col width="38%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head"><p>PIN</p>
+</th>
+<th class="head"><p>SIDE B
+(top)</p>
+</th>
+<th class="head"><p>SIDE A
+(bottom)</p>
+</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td><p>1</p>
+</td>
+<td><p><em>DEBUG</em></p>
+</td>
+<td><p><em>MSEL</em></p>
+</td>
+</tr>
+<tr><td><p>2</p>
+</td>
+<td><p><em>TCK</em></p>
+</td>
+<td><p><em>5V</em></p>
+</td>
+</tr>
+<tr><td><p>3</p>
+</td>
+<td><p><em>GND</em></p>
+</td>
+<td><p><em>TMS</em></p>
+</td>
+</tr>
+<tr><td><p>4</p>
+</td>
+<td><p><em>TDI</em></p>
+</td>
+<td><p><em>TDO</em></p>
+</td>
+</tr>
+<tr><td><p>5</p>
+</td>
+<td><p><em>3V3</em></p>
+</td>
+<td><p><em>PRSNT</em></p>
+</td>
+</tr>
+<tr><td><p>6</p>
+</td>
+<td><p>X1D2</p>
+</td>
+<td><p>X1D8</p>
+</td>
+</tr>
+<tr><td><p>7</p>
+</td>
+<td><p>X1D3</p>
+</td>
+<td><p>X1D9</p>
+</td>
+</tr>
+<tr><td><p>8</p>
+</td>
+<td><p><em>GND</em></p>
+</td>
+<td><p>X1D1</p>
+</td>
+</tr>
+<tr><td><p>9</p>
+</td>
+<td><p>X1D4</p>
+</td>
+<td><p>X1D6</p>
+</td>
+</tr>
+<tr><td><p>10</p>
+</td>
+<td><p>X1D10</p>
+</td>
+<td><p><em>GND</em></p>
+</td>
+</tr>
+<tr><td><p>11</p>
+</td>
+<td><p>X1D3</p>
+</td>
+<td><p>X1D7</p>
+</td>
+</tr>
+<tr><td colspan="3"><p><strong>MECHANICAL KEY</strong></p>
+</td>
+</tr>
+<tr><td><p>12</p>
+</td>
+<td><p>X1D14</p>
+</td>
+<td><p>X1D20</p>
+</td>
+</tr>
+<tr><td><p>13</p>
+</td>
+<td><p>X1D15</p>
+</td>
+<td><p>X1D21</p>
+</td>
+</tr>
+<tr><td><p>14</p>
+</td>
+<td><p><em>CLK</em></p>
+</td>
+<td><p><em>GND</em></p>
+</td>
+</tr>
+<tr><td><p>15</p>
+</td>
+<td><p>X1D22</p>
+</td>
+<td><p>X1D13</p>
+</td>
+</tr>
+<tr><td><p>16</p>
+</td>
+<td><p><em>GND</em></p>
+</td>
+<td><p><em>RST_N</em></p>
+</td>
+</tr>
+<tr><td><p>17</p>
+</td>
+<td><p>X1D16</p>
+</td>
+<td><p>X1D18</p>
+</td>
+</tr>
+<tr><td><p>18</p>
+</td>
+<td><p>X1D17</p>
+</td>
+<td><p>X1D19</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div><h3 id="triangle">TRIANGLE</h3>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="24%" />
+<col width="38%" />
+<col width="38%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head"><p>PIN</p>
+</th>
+<th class="head"><p>SIDE B
+(top)</p>
+</th>
+<th class="head"><p>SIDE A
+(bottom)</p>
+</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td><p>1</p>
+</td>
+<td><p>NC</p>
+</td>
+<td><p>NC</p>
+</td>
+</tr>
+<tr><td><p>2</p>
+</td>
+<td><p>X0D0</p>
+</td>
+<td><p><em>5V</em></p>
+</td>
+</tr>
+<tr><td><p>3</p>
+</td>
+<td><p><em>GND</em></p>
+</td>
+<td><p>X0D12</p>
+</td>
+</tr>
+<tr><td><p>4</p>
+</td>
+<td><p>X0D11</p>
+</td>
+<td><p>X0D23</p>
+</td>
+</tr>
+<tr><td><p>5</p>
+</td>
+<td><p><em>3V3</em></p>
+</td>
+<td><p><em>GND</em></p>
+</td>
+</tr>
+<tr><td><p>6</p>
+</td>
+<td><p>X0D26</p>
+</td>
+<td><p>X0D32</p>
+</td>
+</tr>
+<tr><td><p>7</p>
+</td>
+<td><p>X0D27</p>
+</td>
+<td><p>X0D33</p>
+</td>
+</tr>
+<tr><td><p>8</p>
+</td>
+<td><p><em>GND</em></p>
+</td>
+<td><p>X0D25</p>
+</td>
+</tr>
+<tr><td><p>9</p>
+</td>
+<td><p>X0D28</p>
+</td>
+<td><p>X0D30</p>
+</td>
+</tr>
+<tr><td><p>10</p>
+</td>
+<td><p>X0D34</p>
+</td>
+<td><p><em>GND</em></p>
+</td>
+</tr>
+<tr><td><p>11</p>
+</td>
+<td><p>X0D29</p>
+</td>
+<td><p>X0D31</p>
+</td>
+</tr>
+<tr><td colspan="3"><p><strong>MECHANICAL KEY</strong></p>
+</td>
+</tr>
+<tr><td><p>12</p>
+</td>
+<td><p>X0D36</p>
+</td>
+<td><p>X0D42</p>
+</td>
+</tr>
+<tr><td><p>13</p>
+</td>
+<td><p>X0D37</p>
+</td>
+<td><p>X0D43</p>
+</td>
+</tr>
+<tr><td><p>14</p>
+</td>
+<td><p><em>CLK</em></p>
+</td>
+<td><p><em>GND</em></p>
+</td>
+</tr>
+<tr><td><p>15</p>
+</td>
+<td><p>X0D24</p>
+</td>
+<td><p>X0D35</p>
+</td>
+</tr>
+<tr><td><p>16</p>
+</td>
+<td><p><em>GND</em></p>
+</td>
+<td><p><em>RST_N</em></p>
+</td>
+</tr>
+<tr><td><p>17</p>
+</td>
+<td><p>X0D38</p>
+</td>
+<td><p>X0D40</p>
+</td>
+</tr>
+<tr><td><p>18</p>
+</td>
+<td><p>X0D39</p>
+</td>
+<td><p>X0D41</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div><h3 id="circle">CIRCLE</h3>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="24%" />
+<col width="38%" />
+<col width="38%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head"><p>PIN</p>
+</th>
+<th class="head"><p>SIDE B
+(top)</p>
+</th>
+<th class="head"><p>SIDE A
+(bottom)</p>
+</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td><p>1</p>
+</td>
+<td><p>NC</p>
+</td>
+<td><p>NC</p>
+</td>
+</tr>
+<tr><td><p>2</p>
+</td>
+<td><p>X1D0</p>
+</td>
+<td><p><em>5V</em></p>
+</td>
+</tr>
+<tr><td><p>3</p>
+</td>
+<td><p><em>GND</em></p>
+</td>
+<td><p>X1D12</p>
+</td>
+</tr>
+<tr><td><p>4</p>
+</td>
+<td><p>X1D11</p>
+</td>
+<td><p>X1D23</p>
+</td>
+</tr>
+<tr><td><p>5</p>
+</td>
+<td><p><em>3V3</em></p>
+</td>
+<td><p><em>GND</em></p>
+</td>
+</tr>
+<tr><td><p>6</p>
+</td>
+<td><p>X1D26</p>
+</td>
+<td><p>X1D32</p>
+</td>
+</tr>
+<tr><td><p>7</p>
+</td>
+<td><p>X1D27</p>
+</td>
+<td><p>X1D33</p>
+</td>
+</tr>
+<tr><td><p>8</p>
+</td>
+<td><p><em>GND</em></p>
+</td>
+<td><p>X1D25</p>
+</td>
+</tr>
+<tr><td><p>9</p>
+</td>
+<td><p>X1D28</p>
+</td>
+<td><p>X1D30</p>
+</td>
+</tr>
+<tr><td><p>10</p>
+</td>
+<td><p>X1D34</p>
+</td>
+<td><p><em>GND</em></p>
+</td>
+</tr>
+<tr><td><p>11</p>
+</td>
+<td><p>X1D29</p>
+</td>
+<td><p>X1D31</p>
+</td>
+</tr>
+<tr><td colspan="3"><p><strong>MECHANICAL KEY</strong></p>
+</td>
+</tr>
+<tr><td><p>12</p>
+</td>
+<td><p>X1D36</p>
+</td>
+<td><p>X1D42</p>
+</td>
+</tr>
+<tr><td><p>13</p>
+</td>
+<td><p>X1D37</p>
+</td>
+<td><p>X1D43</p>
+</td>
+</tr>
+<tr><td><p>14</p>
+</td>
+<td><p><em>CLK</em></p>
+</td>
+<td><p><em>GND</em></p>
+</td>
+</tr>
+<tr><td><p>15</p>
+</td>
+<td><p>X1D24</p>
+</td>
+<td><p>X1D35</p>
+</td>
+</tr>
+<tr><td><p>16</p>
+</td>
+<td><p><em>GND</em></p>
+</td>
+<td><p><em>RST_N</em></p>
+</td>
+</tr>
+<tr><td><p>17</p>
+</td>
+<td><p>X1D38</p>
+</td>
+<td><p>X1D40</p>
+</td>
+</tr>
+<tr><td><p>18</p>
+</td>
+<td><p>X1D39</p>
+</td>
+<td><p>X1D41</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div><h3 id="mixed-signal">MIXED SIGNAL</h3>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="24%" />
+<col width="38%" />
+<col width="38%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head"><p>PIN</p>
+</th>
+<th class="head"><p>SIDE B
+(top)</p>
+</th>
+<th class="head"><p>SIDE A
+(bottom)</p>
+</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td><p>1</p>
+</td>
+<td><p><em>3V3A</em></p>
+</td>
+<td><p>NC</p>
+</td>
+</tr>
+<tr><td><p>2</p>
+</td>
+<td><p>X0D10</p>
+</td>
+<td><p><em>5V</em></p>
+</td>
+</tr>
+<tr><td><p>3</p>
+</td>
+<td><p><em>GND</em></p>
+</td>
+<td><p>X0D13</p>
+</td>
+</tr>
+<tr><td><p>4</p>
+</td>
+<td><p>X0D22</p>
+</td>
+<td><p>WAKE</p>
+</td>
+</tr>
+<tr><td><p>5</p>
+</td>
+<td><p><em>3V3</em></p>
+</td>
+<td><p><em>GND</em></p>
+</td>
+</tr>
+<tr><td><p>6</p>
+</td>
+<td><p>ADC0</p>
+</td>
+<td><p>ADC4</p>
+</td>
+</tr>
+<tr><td><p>7</p>
+</td>
+<td><p>ADC1</p>
+</td>
+<td><p>ADC5</p>
+</td>
+</tr>
+<tr><td><p>8</p>
+</td>
+<td><p><em>GND</em></p>
+</td>
+<td><p><em>GND</em></p>
+</td>
+</tr>
+<tr><td><p>9</p>
+</td>
+<td><p><em>GND</em></p>
+</td>
+<td><p>ADC6</p>
+</td>
+</tr>
+<tr><td><p>10</p>
+</td>
+<td><p>ADC2</p>
+</td>
+<td><p><em>GND</em></p>
+</td>
+</tr>
+<tr><td><p>11</p>
+</td>
+<td><p>ADC3</p>
+</td>
+<td><p><em>GND</em></p>
+</td>
+</tr>
+<tr><td colspan="3"><p><strong>MECHANICAL KEY</strong></p>
+</td>
+</tr>
+<tr><td><p>12</p>
+</td>
+<td><p><em>GND</em></p>
+</td>
+<td><p>NC</p>
+</td>
+</tr>
+<tr><td><p>13</p>
+</td>
+<td><p>NC</p>
+</td>
+<td><p>NC</p>
+</td>
+</tr>
+<tr><td><p>14</p>
+</td>
+<td><p>NC</p>
+</td>
+<td><p><em>GND</em></p>
+</td>
+</tr>
+<tr><td><p>15</p>
+</td>
+<td><p>X0D1</p>
+</td>
+<td><p>NC</p>
+</td>
+</tr>
+<tr><td><p>16</p>
+</td>
+<td><p><em>GND</em></p>
+</td>
+<td><p><em>RST_N</em></p>
+</td>
+</tr>
+<tr><td><p>17</p>
+</td>
+<td><p><em>GND</em></p>
+</td>
+<td><p>ADC7</p>
+</td>
+</tr>
+<tr><td><p>18</p>
+</td>
+<td><p>NC</p>
+</td>
+<td><p><em>GND</em></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div></div>
+
+             </div>
+             </div>
+
+
+          </div>
+
+          <div>
+             <!--seealsos-->
+          </div><div id="local_seealso">
+             <h1>See Also</h1>
+             <ul class="iconmenu">
+             <li><a href="page0.html">A16 sliceKIT Overview</a></li>
+             <li><a href="page1.html">A16 sliceKIT Core Board</a></li>
+             <li><a href="page2.html">Slice Cards and Slots</a></li>
+             </ul>
+          </div>
+    <div class="footer">
+    </div>
+  </body>
+</html>
