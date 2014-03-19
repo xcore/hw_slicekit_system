@@ -302,7 +302,7 @@ _system/doc_a16/_build/xlatex/spiselectflow.pdf>] <use xmoslogo18pt.pdf>
 [10] <use xmoslogo18pt.pdf> [11]
 
 Package longtable Warning: Column widths have changed
-(longtable)                in table 1 on input line 397.
+(longtable)                in table 1 on input line 403.
 
 <use xmoslogo18pt.pdf> [12] <use xmoslogo18pt.pdf> [13] <use xmoslogo18pt.pdf>
 [14] <use xmoslogo18pt.pdf> [15] <use xmoslogo18pt.pdf> [16]
@@ -310,7 +310,7 @@ Package longtable Warning: Column widths have changed
 [19] <use xmoslogo18pt.pdf> [20] <use xmoslogo18pt.pdf> [21]
 <use xmoslogo18pt.pdf> [22] <use xmoslogo18pt.pdf> [23] <use xmoslogo18pt.pdf>
 [24] <use warnmargin.pdf> <use xmoslogo18pt.pdf> [25]
-Underfull \hbox (badness 10000) in paragraph at lines 820--820
+Underfull \hbox (badness 10000) in paragraph at lines 828--828
 
 <use xmoslogo18pt.pdf> [26]
 <slicecarddetail.pdf, id=409, 350.01462pt x 290.25323pt>
@@ -334,5 +334,5 @@ S/xSoftIPTools/1.0.18/latex/texmf-local/fonts/type1/bh/lucida/lsr.pfb><c:/Progr
 am Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf-dist/fonts/type1/public/mar
 vosym/marvosym.pfb><c:/Program Files (x86)/XMOS/xSoftIPTools/1.0.18/latex/texmf
 -dist/fonts/type1/public/cm-super/sftt0900.pfb>
-Output written on xmos_texfile.pdf (32 pages, 2134335 bytes).
+Output written on xmos_texfile.pdf (32 pages, 2140347 bytes).
 Transcript written on xmos_texfile.log.

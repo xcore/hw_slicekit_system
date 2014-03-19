@@ -4,7 +4,7 @@ Building documentation target 'xdehtml' in doc_a16
     Run 'git pull' in C:\Users\edward\.xdoc\docs_xref
          Already up-to-date.
     Run 'git config --get remote.origin.url' in .
-         git://github.com/xcore/hw_slicekit_system.git
+         https://github.com/xcore/hw_slicekit_system.git
     Run 'git rev-parse --show-prefix' in Z:\git\hw_slicekit_system\doc_a16
          doc_a16/
     Run 'git pull' in C:\Users\edward\.xdoc\docs_xref
@@ -22,7 +22,7 @@ Building documentation target 'xdehtml' in doc_a16
     Run 'git pull' in C:\Users\edward\.xdoc\docs_xref
          Already up-to-date.
     Run 'git config --get remote.origin.url' in .
-         git://github.com/xcore/hw_slicekit_system.git
+         https://github.com/xcore/hw_slicekit_system.git
     Run 'git rev-parse --show-prefix' in Z:\git\hw_slicekit_system\doc_a16
          doc_a16/
     Run 'git pull' in C:\Users\edward\.xdoc\docs_xref
@@ -48,7 +48,7 @@ Building documentation target 'xdehtml' in doc_a16
     Run 'git pull' in C:\Users\edward\.xdoc\docs_xref
          Already up-to-date.
     Run 'git config --get remote.origin.url' in .
-         git://github.com/xcore/hw_slicekit_system.git
+         https://github.com/xcore/hw_slicekit_system.git
     Run 'git rev-parse --show-prefix' in Z:\git\hw_slicekit_system\doc_a16
          doc_a16/
     Removing excess files

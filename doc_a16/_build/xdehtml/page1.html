@@ -28,7 +28,7 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="top" title="A16 sliceKIT Hardware Manual v documentation" href="index.html" />
-    <link rel="next" title="Slice Cards and Slots" href="page2.html" />
+    <link rel="next" title="sliceCARDs and Slots" href="page2.html" />
     <link rel="prev" title="A16 sliceKIT Overview" href="page0.html" /> 
   </head>
   <body class="xde indented-content" onload="prepareContents();">  
@@ -47,7 +47,7 @@
 <h2 class="topic" id="multiple-core-boards">Multiple Core Boards</h2>
 <div><p>Additional A16 or L16 sliceKIT Core Boards can be connected to the first board&#8217;s <tt class="docutils literal"><span class="pre">Chain</span></tt> slot via the second board&#8217;s <tt class="docutils literal"><span class="pre">Square</span></tt> Slot to add extra processing capability and I/O through extra Slice Cards. The first such board is termed the Master, the remaining boards as Slaves. When there is only one board, it is the Master.</p>
 </div><h2 class="topic" id="setup">Setup</h2>
-<div><p>For debugging, an XSYS adaptor board is connected to the <tt class="docutils literal"><span class="pre">Chain</span></tt> Connector of the Master Board to allow connection of an XTAG debug adapter to provide a debug link from a USB host.</p>
+<div><p>For debugging, an XSYS adaptor board is connected to the <tt class="docutils literal"><span class="pre">Chain</span></tt> Connector of the Master Board to allow connection of an xTAG debug adapter to provide a debug link from a USB host.</p>
 <p>The Core Board is powered by a 12V external power supply.</p>
 </div><h2 class="topic" id="power-supply">Power Supply</h2>
 <div><p>Power input to the sliceKIT Core Board is via a standard barrel jack connector. A standard 12V external power supply should be used to power the board. Each Core Board requires its own 12V supply. This input supply is used to generate the main 5V board supply via a DC-DC converter.</p>
@@ -63,36 +63,36 @@
 <object data="_images/jtagchain.svg" type="image/svg+xml" width="600"><embed src="_images/jtagchain.svg" type="image/svg+xml" width="600" /></object>
 </div>
 <p>Presence detect signals are present on both the <tt class="docutils literal"><span class="pre">Chain</span></tt> Connector and <tt class="docutils literal"><span class="pre">Square</span></tt> Slot connectors to allow detection of a connected board and subsequent automatic switching of the JTAG chain.  In a system of multiple Core Boards, the Master is the source of the JTAG chain so the system can only be debugged from the master. Other boards will see no devices in the JTAG chain.</p>
-<p>The use of XScope is covered in the XMOS Links section. The XScope XMOS Link can be either enabled or disabled via a switch on the XSYS adapter board.</p>
+<p>The use of xSCOPE is covered in the xCONNECT Links section. The xSCOPE xCONNECT link can be either enabled or disabled via a switch on the XSYS adapter board.</p>
 </div><h2 class="topic" id="a16-boot">A16 Boot</h2>
-<div><p>Master Core Boards boot from SPI flash, while slave Core Boards boot from XMOS link <tt class="docutils literal"><span class="pre">XLB</span></tt> from the next connected Core Board.</p>
-<p>To allow re-use of the SPI boot pins (ports 1A, 1B, 1C, 1D) as signal IO pins for the <tt class="docutils literal"><span class="pre">Star</span></tt>, <tt class="docutils literal"><span class="pre">Triangle</span></tt> and <tt class="docutils literal"><span class="pre">A</span></tt> slot, a latched bus switch is used which connects the xCore SPI pins to either the SPI Flash or to the Slice Card Slots. The switch is controlled by X0D42 and X0D43 (P8D6 and P8D7 on Tile 0: on the <tt class="docutils literal"><span class="pre">Triangle</span></tt> slot). Once the device has booted X0D43 is used to enable or disable the SPI interface, X0D42 should then transition from low to high to latch the selection. The SPI selection state is then maintained until the system is reset.</p>
+<div><p>Master Core Boards boot from SPI flash, while slave Core Boards boot from xCONNECT link <tt class="docutils literal"><span class="pre">XLB</span></tt> from the next connected Core Board.</p>
+<p>To allow re-use of the SPI boot pins (ports 1A, 1B, 1C, 1D) as signal I/O pins for the <tt class="docutils literal"><span class="pre">Star</span></tt>, <tt class="docutils literal"><span class="pre">Triangle</span></tt> and <tt class="docutils literal"><span class="pre">A</span></tt> slot, a latched bus switch is used which connects the xCORE SPI pins to either the SPI Flash or to the Slice Card Slots. The switch is controlled by X0D42 and X0D43 (P8D6 and P8D7 on Tile 0: on the <tt class="docutils literal"><span class="pre">Triangle</span></tt> slot). Once the device has booted X0D43 is used to enable or disable the SPI interface, X0D42 should then transition from low to high to latch the selection. The SPI selection state is then maintained until the system is reset.</p>
 <div class="figure">
 <div class="caption"><span>SPI Select Flow Diagram</span></div>
 <object data="_images/spiselectflow.svg" type="image/svg+xml" width="600"><embed src="_images/spiselectflow.svg" type="image/svg+xml" width="600" /></object>
 </div>
 <p>Once this sequence is completed the selection has been latched, therefore X0D42 and X0D43 return to performing their normal functions in the <tt class="docutils literal"><span class="pre">Triangle</span></tt> slot.</p>
 <p class="warning">If the SPI is not disabled, then Slice Cards in the <tt class="docutils literal"><span class="pre">Star</span></tt>, <tt class="docutils literal"><span class="pre">Triangle</span></tt> or <tt class="docutils literal"><span class="pre">A</span></tt> slots may not function as expected. If there are no Slice Cards in the <tt class="docutils literal"><span class="pre">Star</span></tt>, <tt class="docutils literal"><span class="pre">Triangle</span></tt> or <tt class="docutils literal"><span class="pre">A</span></tt> slot, then it does not matter whether the SPI has been disabled or not. Therefore, applications which require runtime access to the SPI flash should either leave the <tt class="docutils literal"><span class="pre">Star</span></tt>, <tt class="docutils literal"><span class="pre">Triangle</span></tt> and <tt class="docutils literal"><span class="pre">A</span></tt> slots unpopulated or check to ensure that the Card which is in there will be unaffected by the operation of the Flash.</p>
-<p>The XTAG debug system can use the boot mode select signal to force all devices in the chain (master and slave Core Boards) to boot from JTAG (don&#8217;t boot) for debug purposes.</p>
-<p>If not in this mode, the devices will boot from SPI or XMOS Link as appropriate.</p>
-</div><h2 class="topic" id="xmos-links">XMOS Links</h2>
-<div><p>The Chain Connector contains two 5-bit XMOS Links, XLA and XLB, which can be used for chaining sliceKIT Core Boards together. The links from Tile 0 are connected to the <tt class="docutils literal"><span class="pre">Chain</span></tt> Connector and the <tt class="docutils literal"><span class="pre">Star</span></tt> Slot.  The links from Tile 1 are connected to the <tt class="docutils literal"><span class="pre">Square</span></tt> Slot.</p>
-<p>The only complication in this system is use of the XScope 2-bit XMOS Link. This link overlaps a 4 bit port on the <tt class="docutils literal"><span class="pre">Star</span></tt> Slot connector so it would not be possible to use this for user IO at the same time as xSCOPE.</p>
-<p>To work around this, a switch is present on the XSYS adapter board to either enable or disable the XScope XMOS Link.
-When disabled, these pins are disconnected from the <tt class="docutils literal"><span class="pre">Chain</span></tt> Connector and are free for use on the <tt class="docutils literal"><span class="pre">Star</span></tt> Slot. When enabled they will work as an XMOS link and hence will appear on the relevant pins of the <tt class="docutils literal"><span class="pre">Star</span></tt> Slot.</p>
-<p class="warning">It is recommended that if a Slice Card is used in the <tt class="docutils literal"><span class="pre">Star</span></tt> Slot the xSCOPE switch is off on the XSYS Adaptor Card to ensure correct operation of the Slice Card in the <tt class="docutils literal"><span class="pre">Star</span></tt> slot.</p>
+<p>The xTAG debug system can use the boot mode select signal to force all devices in the chain (master and slave Core Boards) to boot from JTAG (don&#8217;t boot) for debug purposes.</p>
+<p>If not in this mode, the devices will boot from SPI or xCONNECT link as appropriate.</p>
+</div><h2 class="topic" id="xconnect-links">xCONNECT Links</h2>
+<div><p>The Chain Connector contains two 5-bit xCONNECT links, XLA and XLB, which can be used for chaining sliceKIT Core Boards together. The links from Tile 0 are connected to the <tt class="docutils literal"><span class="pre">Chain</span></tt> Connector and the <tt class="docutils literal"><span class="pre">Star</span></tt> Slot.  The links from Tile 1 are connected to the <tt class="docutils literal"><span class="pre">Square</span></tt> Slot.</p>
+<p>The only complication in this system is use of the xSCOPE 2-bit xCONNECT Link. This link overlaps a 4 bit port on the <tt class="docutils literal"><span class="pre">Star</span></tt> Slot connector so it would not be possible to use this for user I/O at the same time as xSCOPE.</p>
+<p>To work around this, a switch is present on the XSYS adapter board to either enable or disable the xSCOPE xCONNECT Link.</p>
+<p>When disabled, these pins are disconnected from the <tt class="docutils literal"><span class="pre">Chain</span></tt> Connector and are free for use on the <tt class="docutils literal"><span class="pre">Star</span></tt> Slot. When enabled they will work as an xCONNECT link and hence will appear on the relevant pins of the <tt class="docutils literal"><span class="pre">Star</span></tt> Slot.</p>
+<p class="warning">It is recommended that if a sliceCARD is used in the <tt class="docutils literal"><span class="pre">Star</span></tt> Slot the xSCOPE switch is off on the XSYS Adaptor Card to ensure correct operation of the sliceCARD in the <tt class="docutils literal"><span class="pre">Star</span></tt> slot.</p>
 </div><h2 class="topic" id="reset">Reset</h2>
-<div><p>The whole system is held in reset until all power supplies are stable, and reset is connected to all Slice Cards so any circuitry on them can be reset.
-It also indicates to the Slice Cards that their power input is stable. The reset from the XTAG resets the whole system, if required for debugging.</p>
+<div><p>The whole system is held in reset until all power supplies are stable, and reset is connected to all Slice Cards so any circuitry on them can be reset.</p>
+<p>It also indicates to the sliceCARDs that their power input is stable. The reset from the xTAG resets the whole system, if required for debugging.</p>
 </div><h2 class="topic" id="clocking">Clocking</h2>
 <div><p>There are two sources for the system clock: an on-board 25MHz oscillator or the CLK signal from the <tt class="docutils literal"><span class="pre">Chain</span></tt> Connector. The system clock source is selected automatically according to the presence signals on the <tt class="docutils literal"><span class="pre">Chain</span></tt> connector.</p>
 <p>This means the system clock from a Master Core Board is fed automatically to all of the slave Core Boards so the whole system will operate synchronously.</p>
-<p>The system clock is also fed to each of the Slice Card Slots.</p>
+<p>The system clock is also fed to each of the sliceCARD Slots.</p>
 </div><h2 class="topic" id="testpoints"><span id="sec-io-crossref"></span>Testpoints</h2>
-<div><p>Each XCORE I/O signal is also available on a 0.1&#8221; header, next to the Slot that it is connected to.
-These connections can be used to connect an oscilloscope or logic analyser, or for interconnection of signals for advanced development work.</p>
+<div><p>Each xCORE I/O signal is also available on a 0.1&#8221; header, next to the Slot that it is connected to.</p>
+<p>These connections can be used to connect an oscilloscope or logic analyser, or for interconnection of signals for advanced development work.</p>
 <p>The signals are identified on the silkscreen layer of the sliceKIT Core Board, the table below lists their relationship to the internal ports.</p>
-<div class="figure"><div class="topic caption"><span>Testpoint Information</span></div><table border="1" class="wide docutils">
+<div class="figure"><div class="topic caption"><span>Testpoint Information</span></div><table border="1" class="docutils">
 <colgroup>
 <col width="12%" />
 <col width="19%" />
@@ -1657,7 +1657,7 @@ These connections can be used to connect an oscilloscope or logic analyser, or f
 </tbody>
 </table>
 </div></div><h2 class="topic" id="slot-pinouts">Slot pinouts</h2>
-<div><p>The signal assignments for the connectors on the Core Board and Slice Cards can be seen in the table below.</p>
+<div><p>The signal assignments for the connectors on the Core Board and sliceCARDs can be seen in the table below.</p>
 <h3 id="star">STAR</h3>
 <div><table border="1" class="docutils">
 <colgroup>
@@ -4149,8 +4149,8 @@ These connections can be used to connect an oscilloscope or logic analyser, or f
 <div><p>On all Slots, TDO is always out of the sliceKIT Core Board, TDI is always in to the Core Board.</p>
 <p>MSEL, TCK, TMS, RST_N are all inputs to the Core Board from the <tt class="docutils literal"><span class="pre">Chain</span></tt> Connector and outputs from the Core Board on the <tt class="docutils literal"><span class="pre">Square</span></tt> Slot.</p>
 <p>DEBUG is bidirectional.</p>
-<p>PRSNT is used on the <tt class="docutils literal"><span class="pre">Chain</span></tt> Connector to detect it is plugged into the <tt class="docutils literal"><span class="pre">Square</span></tt> Slot of another Core Board. This signal is used to switch JTAG and CLK sources.
-Similarly, PRSNT_N is used on the <tt class="docutils literal"><span class="pre">Star</span></tt> Slot to detect another Core Board is connected. This signal is used to switch the JTAG chain signals.</p>
+<p>PRSNT is used on the <tt class="docutils literal"><span class="pre">Chain</span></tt> Connector to detect it is plugged into the <tt class="docutils literal"><span class="pre">Square</span></tt> Slot of another Core Board. This signal is used to switch JTAG and CLK sources.</p>
+<p>Similarly, PRSNT_N is used on the <tt class="docutils literal"><span class="pre">Star</span></tt> Slot to detect another Core Board is connected. This signal is used to switch the JTAG chain signals.</p>
 <p>CLK and RST_N are inputs to the Core Board from the <tt class="docutils literal"><span class="pre">Chain</span></tt> Connector and output from all Slots.</p>
 </div></div>
 
@@ -4166,8 +4166,8 @@ Similarly, PRSNT_N is used on the <tt class="docutils literal"><span class="pre"
              <h1>See Also</h1>
              <ul class="iconmenu">
              <li><a href="page0.html">A16 sliceKIT Overview</a></li>
-             <li><a href="page2.html">Slice Cards and Slots</a></li>
-             <li><a href="page3.html">Designing a Slice Card</a></li>
+             <li><a href="page2.html">sliceCARDs and Slots</a></li>
+             <li><a href="page3.html">Designing a sliceCARD</a></li>
              </ul>
           </div>
     <div class="footer">

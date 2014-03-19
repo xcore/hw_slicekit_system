@@ -7,7 +7,7 @@
 \BOOKMARK [1][-]{section.2.3}{Power Supply}{chapter.2}% 7
 \BOOKMARK [1][-]{section.2.4}{Debug}{chapter.2}% 8
 \BOOKMARK [1][-]{section.2.5}{A16 Boot}{chapter.2}% 9
-\BOOKMARK [1][-]{section.2.6}{XMOS Links}{chapter.2}% 10
+\BOOKMARK [1][-]{section.2.6}{xCONNECT Links}{chapter.2}% 10
 \BOOKMARK [1][-]{section.2.7}{Reset}{chapter.2}% 11
 \BOOKMARK [1][-]{section.2.8}{Clocking}{chapter.2}% 12
 \BOOKMARK [1][-]{section.2.9}{Testpoints}{chapter.2}% 13
@@ -22,8 +22,8 @@
 \BOOKMARK [0][-]{chapter.3}{Slice Cards and Slots}{}% 22
 \BOOKMARK [0][-]{chapter.4}{Designing a Slice Card}{}% 23
 \BOOKMARK [1][-]{section.4.1}{Power}{chapter.4}% 24
-\BOOKMARK [1][-]{section.4.2}{Signal IO}{chapter.4}% 25
-\BOOKMARK [1][-]{section.4.3}{Slice Card Form Factors}{chapter.4}% 26
+\BOOKMARK [1][-]{section.4.2}{Signal I/O}{chapter.4}% 25
+\BOOKMARK [1][-]{section.4.3}{sliceCARD Form Factors}{chapter.4}% 26
 \BOOKMARK [1][-]{section.4.4}{Connector Pinouts}{chapter.4}% 27
 \BOOKMARK [2][-]{subsection.4.4.1}{STAR}{section.4.4}% 28
 \BOOKMARK [2][-]{subsection.4.4.2}{SQUARE}{section.4.4}% 29

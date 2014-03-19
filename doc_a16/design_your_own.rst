@@ -1,17 +1,19 @@
-Designing a Slice Card
-======================
+Designing a sliceCARD
+=====================
 
 Power
 -----
 
-Slice Cards have two power supplies available to them, 5V and 3V3.
+sliceCARDs have two power supplies available to them, 5V and 3V3.
+
 The 5V supply can range from 4.75V to 5.25V (5\%) at a current of up to 0.25A per slice.
+
 The 3V3 supply can range from 3.13V to 3.47V (5\%) at a current of up to 0.25A per slice.
 
-Signal IO
----------
+Signal I/O
+----------
 
-A single Slice Card connector has 36 contacts. The four types of slice have a number of common pins which are described below.
+A single sliceCARD connector has 36 contacts. The four types of slice have a number of common pins which are described below.
 
 - GND. Power supply ground.
 - 5V. 5V power supply input.
@@ -20,30 +22,30 @@ A single Slice Card connector has 36 contacts. The four types of slice have a nu
 - CLK. System clock input. 25MHz.
 - RST_N. System reset input, active low. Push-Pull drive.
 
-The other available pins are connected to xCore Processor IOs as shown in the pinout tables.
+The other available pins are connected to xCORE Processor I/Os as shown in the pinout tables.
 
-Slice Cards can take their power from either 5V or 3V3 or both. Slice Cards should draw no more than 250mA from each supply.
+sliceCARDs can take their power from either 5V or 3V3 or both. sliceCARDs should draw no more than 250mA from each supply.
 
 At system power-on, the 5V supply will power up first, followed by the 3V3 supply. The system reset signal will de-assert a short time after this.
 
-Due to the constraints on the sliceKIT Core Board, there are some ports on the Slice Cards which should be used in preference to others. These constraints are as follows:
+Due to the constraints on the sliceKIT Core Board, there are some ports on the sliceCARDs which should be used in preference to others. These constraints are as follows:
 
-- X0D4-7 can be selected for use as the XScope XMOS Link
-- X0D0,1,10,11 could be used for SPI boot on a master core board. These pins will be hi-z when booting and can be transferred to the XCore IO signals when boot is complete.
+- X0D4-7 can be selected for use as the xSCOPE xCONNECT Link
+- X0D0,1,10,11 could be used for SPI boot on a master core board. These pins will be hi-z when booting and can be transferred to the xCORE I/O signals when boot is complete.
 
-For Slice Cards intended for use in the ``Star`` Slot, P4B should be avoided with the knowledge that using it means XScope can not be used if the Slice Card is plugged into the ``Star`` Slot.
+For sliceCARDs intended for use in the ``Star`` Slot, P4B should be avoided with the knowledge that using it means xSCOPE can not be used if the sliceCARD is plugged into the ``Star`` Slot.
 
-Slice Card Form Factors
------------------------
+sliceCARD Form Factors
+----------------------
 
-The Slice Cards use a standard PCIe x1 edge finger to connect to the sliceKIT Core Board. Because of this, all Slice Card PCBs must be 1.6mm thick.
+The sliceCARDs use a standard PCIe x1 edge finger to connect to the sliceKIT Core Board. Because of this, all sliceCARD PCBs must be 1.6mm thick.
 
-There is no hard specification as to the length of Slice Cards as this poses no mechanical clashing hazard, however to avoid clashing with other Slice Cards or the power input connector Slice Cards should be limited to 40mm wide.
+There is no hard specification as to the length of sliceCARDs as this poses no mechanical clashing hazard, however to avoid clashing with other sliceCARDs or the power input connector sliceCARDs should be limited to 40mm wide.
 
 Four mounting holes are specified in the corners of the slice for mechanical stability. These should be used with 6mm standoffs, example part Toby Electronics DCB-6.
 
-An optional retention hole is specified for use in securing the Slice Card to the sliceKIT Core Board. This is useful to ensure the Slice Cards is not accidentally unplugged when using the system. 
-Typical usage uses a 2.54mm cable tie between this hole and the associated hole in the sliceKIT Core Board ensuring the Slice Card cannot be unplugged.
+An optional retention hole is specified for use in securing the sliceCARD to the sliceKIT Core Board. This is useful to ensure the sliceCARDs is not accidentally unplugged when using the system. 
+Typical usage uses a 2.54mm cable tie between this hole and the associated hole in the sliceKIT Core Board ensuring the sliceCARD cannot be unplugged.
 
 .. only:: latex
 
@@ -51,21 +53,21 @@ Typical usage uses a 2.54mm cable tie between this hole and the associated hole 
       :width: 70%
       :align: center
    
-      Slice Card Detail
+      sliceCARD Detail
 	  
 .. only:: html
    
    .. figure:: images/slicecarddetail.svg
       :width: 600
          
-      Slice Card Detail
+      sliceCARD Detail
 
 Note that for quick, low cost boards using low cost PCB manufacturing, the chamfer is not required and can be generated by hand using a file or similar.
 
 Connector Pinouts
 -----------------
 
-The pinouts of the four types of Slice Card are shown below. To cross reference pin numbers (eg. X0D1) to port names, see :ref:`here <sec_IO_crossref>`:
+The pinouts of the four types of sliceCARD are shown below. To cross reference pin numbers (eg. X0D1) to port names, see :ref:`here <sec_IO_crossref>`:
 
 STAR                  
 ++++

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Designing a Slice Card &mdash; A16 sliceKIT Hardware Manual v documentation</title>
+    <title>Designing a sliceCARD &mdash; A16 sliceKIT Hardware Manual v documentation</title>
 
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="_static/globals.css"  type="text/css" />
@@ -28,21 +28,21 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="top" title="A16 sliceKIT Hardware Manual v documentation" href="index.html" />
-    <link rel="prev" title="Slice Cards and Slots" href="page2.html" /> 
+    <link rel="prev" title="sliceCARDs and Slots" href="page2.html" /> 
   </head>
   <body class="xde indented-content" onload="prepareContents();">  
           <div id="body">
              <div id="content">
-             <h1>Designing a Slice Card</h1>
+             <h1>Designing a sliceCARD</h1>
 
              <div class='columns'>
             
   <h2 class="topic" id="power">Power</h2>
-<div><p>Slice Cards have two power supplies available to them, 5V and 3V3.
-The 5V supply can range from 4.75V to 5.25V (5%) at a current of up to 0.25A per slice.
-The 3V3 supply can range from 3.13V to 3.47V (5%) at a current of up to 0.25A per slice.</p>
-</div><h2 class="topic" id="signal-io">Signal IO</h2>
-<div><p>A single Slice Card connector has 36 contacts. The four types of slice have a number of common pins which are described below.</p>
+<div><p>sliceCARDs have two power supplies available to them, 5V and 3V3.</p>
+<p>The 5V supply can range from 4.75V to 5.25V (5%) at a current of up to 0.25A per slice.</p>
+<p>The 3V3 supply can range from 3.13V to 3.47V (5%) at a current of up to 0.25A per slice.</p>
+</div><h2 class="topic" id="signal-i-o">Signal I/O</h2>
+<div><p>A single sliceCARD connector has 36 contacts. The four types of slice have a number of common pins which are described below.</p>
 <ul>
 <li>GND. Power supply ground.</li>
 <li>5V. 5V power supply input.</li>
@@ -51,28 +51,28 @@ The 3V3 supply can range from 3.13V to 3.47V (5%) at a current of up to 0.25A pe
 <li>CLK. System clock input. 25MHz.</li>
 <li>RST_N. System reset input, active low. Push-Pull drive.</li>
 </ul>
-<p>The other available pins are connected to xCore Processor IOs as shown in the pinout tables.</p>
-<p>Slice Cards can take their power from either 5V or 3V3 or both. Slice Cards should draw no more than 250mA from each supply.</p>
+<p>The other available pins are connected to xCORE Processor I/Os as shown in the pinout tables.</p>
+<p>sliceCARDs can take their power from either 5V or 3V3 or both. sliceCARDs should draw no more than 250mA from each supply.</p>
 <p>At system power-on, the 5V supply will power up first, followed by the 3V3 supply. The system reset signal will de-assert a short time after this.</p>
-<p>Due to the constraints on the sliceKIT Core Board, there are some ports on the Slice Cards which should be used in preference to others. These constraints are as follows:</p>
+<p>Due to the constraints on the sliceKIT Core Board, there are some ports on the sliceCARDs which should be used in preference to others. These constraints are as follows:</p>
 <ul>
-<li>X0D4-7 can be selected for use as the XScope XMOS Link</li>
-<li>X0D0,1,10,11 could be used for SPI boot on a master core board. These pins will be hi-z when booting and can be transferred to the XCore IO signals when boot is complete.</li>
+<li>X0D4-7 can be selected for use as the xSCOPE xCONNECT Link</li>
+<li>X0D0,1,10,11 could be used for SPI boot on a master core board. These pins will be hi-z when booting and can be transferred to the xCORE I/O signals when boot is complete.</li>
 </ul>
-<p>For Slice Cards intended for use in the <tt class="docutils literal"><span class="pre">Star</span></tt> Slot, P4B should be avoided with the knowledge that using it means XScope can not be used if the Slice Card is plugged into the <tt class="docutils literal"><span class="pre">Star</span></tt> Slot.</p>
-</div><h2 class="topic" id="slice-card-form-factors">Slice Card Form Factors</h2>
-<div><p>The Slice Cards use a standard PCIe x1 edge finger to connect to the sliceKIT Core Board. Because of this, all Slice Card PCBs must be 1.6mm thick.</p>
-<p>There is no hard specification as to the length of Slice Cards as this poses no mechanical clashing hazard, however to avoid clashing with other Slice Cards or the power input connector Slice Cards should be limited to 40mm wide.</p>
+<p>For sliceCARDs intended for use in the <tt class="docutils literal"><span class="pre">Star</span></tt> Slot, P4B should be avoided with the knowledge that using it means xSCOPE can not be used if the sliceCARD is plugged into the <tt class="docutils literal"><span class="pre">Star</span></tt> Slot.</p>
+</div><h2 class="topic" id="slicecard-form-factors">sliceCARD Form Factors</h2>
+<div><p>The sliceCARDs use a standard PCIe x1 edge finger to connect to the sliceKIT Core Board. Because of this, all sliceCARD PCBs must be 1.6mm thick.</p>
+<p>There is no hard specification as to the length of sliceCARDs as this poses no mechanical clashing hazard, however to avoid clashing with other sliceCARDs or the power input connector sliceCARDs should be limited to 40mm wide.</p>
 <p>Four mounting holes are specified in the corners of the slice for mechanical stability. These should be used with 6mm standoffs, example part Toby Electronics DCB-6.</p>
-<p>An optional retention hole is specified for use in securing the Slice Card to the sliceKIT Core Board. This is useful to ensure the Slice Cards is not accidentally unplugged when using the system.
-Typical usage uses a 2.54mm cable tie between this hole and the associated hole in the sliceKIT Core Board ensuring the Slice Card cannot be unplugged.</p>
+<p>An optional retention hole is specified for use in securing the sliceCARD to the sliceKIT Core Board. This is useful to ensure the sliceCARDs is not accidentally unplugged when using the system.
+Typical usage uses a 2.54mm cable tie between this hole and the associated hole in the sliceKIT Core Board ensuring the sliceCARD cannot be unplugged.</p>
 <div class="figure">
-<div class="caption"><span>Slice Card Detail</span></div>
+<div class="caption"><span>sliceCARD Detail</span></div>
 <object data="_images/slicecarddetail.svg" type="image/svg+xml" width="600"><embed src="_images/slicecarddetail.svg" type="image/svg+xml" width="600" /></object>
 </div>
 <p>Note that for quick, low cost boards using low cost PCB manufacturing, the chamfer is not required and can be generated by hand using a file or similar.</p>
 </div><h2 class="topic" id="connector-pinouts">Connector Pinouts</h2>
-<div><p>The pinouts of the four types of Slice Card are shown below. To cross reference pin numbers (eg. X0D1) to port names, see <a class="refexplicit reference" href="page1.html#sec-io-crossref"><span>here</span></a>:</p>
+<div><p>The pinouts of the four types of sliceCARD are shown below. To cross reference pin numbers (eg. X0D1) to port names, see <a class="refexplicit reference" href="page1.html#sec-io-crossref"><span>here</span></a>:</p>
 <h3 id="star">STAR</h3>
 <div><table border="1" class="docutils">
 <colgroup>
@@ -838,7 +838,7 @@ Typical usage uses a 2.54mm cable tie between this hole and the associated hole 
              <ul class="iconmenu">
              <li><a href="page0.html">A16 sliceKIT Overview</a></li>
              <li><a href="page1.html">A16 sliceKIT Core Board</a></li>
-             <li><a href="page2.html">Slice Cards and Slots</a></li>
+             <li><a href="page2.html">sliceCARDs and Slots</a></li>
              </ul>
           </div>
     <div class="footer">

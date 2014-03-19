@@ -9,7 +9,7 @@
 
 
 \title{A16 sliceKIT Hardware Manual}
-\date{March 18, 2014}
+\date{March 19, 2014}
 \author{}
 \newcommand{\sphinxlogo}{}
 \newcommand{\releasename}{Release}
@@ -55,10 +55,10 @@
 \section{Introduction}
 \label{overview:introduction}
 
-This document covers the hardware design of the sliceKIT Modular Development System, consisting of the A16 Core Board, Slice Cards and XSYS adaptor.
+This document covers the hardware design of the sliceKIT Modular Development System, consisting of the A16 Core Board, sliceCARDs and XSYS adaptor.
 
 
-The Core Board contains a fully pinned out 16-core xCore Processor, with its GPIOs connected to four expansion connectors (termed \verb`Slots`) to interface with expansion cards called Slice Cards which plug into the slots. The Core Board also contains all circuitry necessary for operating and debugging the XMOS system. Multiple sliceKIT Core Boards can be interconnected to form a multi XMOS device system with dual 5-bit XMOS Links being present between the boards.
+The Core Board contains a fully pinned out 16-core xCORE Processor, with its GPIOs connected to four expansion connectors (termed \verb`Slots`) to interface with expansion cards called sliceCARDs which plug into the slots. The Core Board also contains all circuitry necessary for operating and debugging the XMOS system. Multiple sliceKIT Core Boards can be interconnected to form a multi XMOS device system with dual 5-bit xCONNECT Links being present between the boards.
 
 
 \newpage
@@ -74,10 +74,10 @@ The Core Board contains a fully pinned out 16-core xCore Processor, with its GPI
 \end{sidecaption}\end{figure} \DocumentFooterFix
 
 
-The diagram above shows an overview of the layout of the core board with slice boards attached. Each of the four slots has a specific label - \verb`Star`, \verb`Triangle`, \verb`Square` and \verb`Circle`, printed on the Core Board silkscreen.  \verb`Triangle` and \verb`Circle` Slice Cards contain 24 XCore IOs and \verb`Star` and \verb`Square` Slice Cards 20 xCore IOs (usable as GPIO or two 5-wire XMOS links). The label denotes which Slice Cards are compatible with which Core Board Slots. The Slice Cards are also marked with one or more of these labels to identify the slot type(s) they function correctly with.
+The diagram above shows an overview of the layout of the core board with slice boards attached. Each of the four slots has a specific label - \verb`Star`, \verb`Triangle`, \verb`Square` and \verb`Circle`, printed on the Core Board silkscreen.  \verb`Triangle` and \verb`Circle` sliceCARDs contain 24 xCORE I/Os and \verb`Star` and \verb`Square` sliceCARDs 20 xCORE I/Os (usable as GPIO or two 5-wire XMOS links). The label denotes which sliceCARDs are compatible with which Core Board Slots. The sliceCARDs are also marked with one or more of these labels to identify the slot type(s) they function correctly with.
 
 
-In addition to the four standard Slice Card slots there is a mixed signal slot, labelled \verb`A`, this slot has access to the 8 ADC channels available on the A16 device, along with 4 xCore I/Os and the wake pin. The xCore I/Os available on the mixed signal slot overlap with the \verb`Star` slot, meaning that if the mixed signal I/Os are used then a Slice Card used in the \verb`Star` slot may not function.
+In addition to the four standard sliceCARD slots there is a \verb`Mixed Signal` slot, labelled A, this slot has access to the 8 ADC channels available on the A16 device, along with 4 xCORE I/Os and the wake pin. The xCORE I/Os available on the \verb`Mixed Signal` slot overlap with the \verb`Star` slot, meaning that if the \verb`Mixed Signal` I/Os are used then a sliceCARD used in the \verb`Star` slot may not function.
 
 
 The final type of connector is on the bottom left of the Core Board and is marked with a hollow square symbol with an X through it. This is for connecting multiple Core Boards together to form systems of 32 logical cores or more. It is termed the \verb`chain` slot.
@@ -86,7 +86,7 @@ The final type of connector is on the bottom left of the Core Board and is marke
 All Slots are 36 pin PCI express style connectors in either socket or edge finger (plug) types.
 
 
-\verb`Star`, \verb`Triangle` and \verb`A` Slots are pinned out from Tile 0 of the L2 xCore and the Circle and Square Slots from Tile 1.
+\verb`Star`, \verb`Triangle` and \verb`Mixed Signal` Slots are pinned out from Tile 0 of the A16 xCORE and the \verb`Circle` and \verb`Square` Slots from Tile 1.
 
 
 
@@ -100,7 +100,7 @@ All Slots are 36 pin PCI express style connectors in either socket or edge finge
 \item \nameref{a16_core_board:power-supply}
 \item \nameref{a16_core_board:debug}
 \item \nameref{a16_core_board:a16-boot}
-\item \nameref{a16_core_board:xmos-links}
+\item \nameref{a16_core_board:xconnect-links}
 \item \nameref{a16_core_board:reset}
 \item \nameref{a16_core_board:clocking}
 \item \nameref{a16_core_board:testpoints}
@@ -133,7 +133,7 @@ Additional A16 or L16 sliceKIT Core Boards can be connected to the first board's
 \section{Setup}
 \label{a16_core_board:setup}
 
-For debugging, an XSYS adaptor board is connected to the \verb`Chain` Connector of the Master Board to allow connection of an XTAG debug adapter to provide a debug link from a USB host.
+For debugging, an XSYS adaptor board is connected to the \verb`Chain` Connector of the Master Board to allow connection of an xTAG debug adapter to provide a debug link from a USB host.
 
 
 The Core Board is powered by a 12V external power supply.
@@ -178,7 +178,7 @@ The JTAG signals are connected as shown below.
 Presence detect signals are present on both the \verb`Chain` Connector and \verb`Square` Slot connectors to allow detection of a connected board and subsequent automatic switching of the JTAG chain.  In a system of multiple Core Boards, the Master is the source of the JTAG chain so the system can only be debugged from the master. Other boards will see no devices in the JTAG chain.
 
 
-The use of XScope is covered in the XMOS Links section. The XScope XMOS Link can be either enabled or disabled via a switch on the XSYS adapter board.
+The use of xSCOPE is covered in the xCONNECT Links section. The xSCOPE xCONNECT link can be either enabled or disabled via a switch on the XSYS adapter board.
 
 
 
@@ -186,10 +186,10 @@ The use of XScope is covered in the XMOS Links section. The XScope XMOS Link can
 \section{A16 Boot}
 \label{a16_core_board:a16-boot}
 
-Master Core Boards boot from SPI flash, while slave Core Boards boot from XMOS link \verb`XLB` from the next connected Core Board.
+Master Core Boards boot from SPI flash, while slave Core Boards boot from xCONNECT link \verb`XLB` from the next connected Core Board.
 
 
-To allow re-use of the SPI boot pins (ports 1A, 1B, 1C, 1D) as signal IO pins for the \verb`Star`, \verb`Triangle` and \verb`A` slot, a latched bus switch is used which connects the xCore SPI pins to either the SPI Flash or to the Slice Card Slots. The switch is controlled by X0D42 and X0D43 (P8D6 and P8D7 on Tile 0: on the \verb`Triangle` slot). Once the device has booted X0D43 is used to enable or disable the SPI interface, X0D42 should then transition from low to high to latch the selection. The SPI selection state is then maintained until the system is reset.
+To allow re-use of the SPI boot pins (ports 1A, 1B, 1C, 1D) as signal I/O pins for the \verb`Star`, \verb`Triangle` and \verb`A` slot, a latched bus switch is used which connects the xCORE SPI pins to either the SPI Flash or to the Slice Card Slots. The switch is controlled by X0D42 and X0D43 (P8D6 and P8D7 on Tile 0: on the \verb`Triangle` slot). Once the device has booted X0D43 is used to enable or disable the SPI interface, X0D42 should then transition from low to high to latch the selection. The SPI selection state is then maintained until the system is reset.
 \begin{figure}[h]
 \begin{sidecaption}{SPI Select Flow Diagram}
 
@@ -203,28 +203,30 @@ Once this sequence is completed the selection has been latched, therefore X0D42 
 If\attentionmargin  the SPI is not disabled, then Slice Cards in the \verb`Star`, \verb`Triangle` or \verb`A` slots may not function as expected. If there are no Slice Cards in the \verb`Star`, \verb`Triangle` or \verb`A` slot, then it does not matter whether the SPI has been disabled or not. Therefore, applications which require runtime access to the SPI flash should either leave the \verb`Star`, \verb`Triangle` and \verb`A` slots unpopulated or check to ensure that the Card which is in there will be unaffected by the operation of the Flash.
 
 
-The XTAG debug system can use the boot mode select signal to force all devices in the chain (master and slave Core Boards) to boot from JTAG (don't boot) for debug purposes.
+The xTAG debug system can use the boot mode select signal to force all devices in the chain (master and slave Core Boards) to boot from JTAG (don't boot) for debug purposes.
 
 
-If not in this mode, the devices will boot from SPI or XMOS Link as appropriate.
+If not in this mode, the devices will boot from SPI or xCONNECT link as appropriate.
 
 
 
 % NON-FULLWIDTH SECTION
-\section{XMOS Links}
-\label{a16_core_board:xmos-links}
+\section{xCONNECT Links}
+\label{a16_core_board:xconnect-links}
 
-The Chain Connector contains two 5-bit XMOS Links, XLA and XLB, which can be used for chaining sliceKIT Core Boards together. The links from Tile 0 are connected to the \verb`Chain` Connector and the \verb`Star` Slot.  The links from Tile 1 are connected to the \verb`Square` Slot.
-
-
-The only complication in this system is use of the XScope 2-bit XMOS Link. This link overlaps a 4 bit port on the \verb`Star` Slot connector so it would not be possible to use this for user IO at the same time as xSCOPE.
+The Chain Connector contains two 5-bit xCONNECT links, XLA and XLB, which can be used for chaining sliceKIT Core Boards together. The links from Tile 0 are connected to the \verb`Chain` Connector and the \verb`Star` Slot.  The links from Tile 1 are connected to the \verb`Square` Slot.
 
 
-To work around this, a switch is present on the XSYS adapter board to either enable or disable the XScope XMOS Link.
-When disabled, these pins are disconnected from the \verb`Chain` Connector and are free for use on the \verb`Star` Slot. When enabled they will work as an XMOS link and hence will appear on the relevant pins of the \verb`Star` Slot.
+The only complication in this system is use of the xSCOPE 2-bit xCONNECT Link. This link overlaps a 4 bit port on the \verb`Star` Slot connector so it would not be possible to use this for user I/O at the same time as xSCOPE.
 
 
-It\attentionmargin  is recommended that if a Slice Card is used in the \verb`Star` Slot the xSCOPE switch is off on the XSYS Adaptor Card to ensure correct operation of the Slice Card in the \verb`Star` slot.
+To work around this, a switch is present on the XSYS adapter board to either enable or disable the xSCOPE xCONNECT Link.
+
+
+When disabled, these pins are disconnected from the \verb`Chain` Connector and are free for use on the \verb`Star` Slot. When enabled they will work as an xCONNECT link and hence will appear on the relevant pins of the \verb`Star` Slot.
+
+
+It\attentionmargin  is recommended that if a sliceCARD is used in the \verb`Star` Slot the xSCOPE switch is off on the XSYS Adaptor Card to ensure correct operation of the sliceCARD in the \verb`Star` slot.
 
 
 
@@ -233,7 +235,9 @@ It\attentionmargin  is recommended that if a Slice Card is used in the \verb`Sta
 \label{a16_core_board:reset}
 
 The whole system is held in reset until all power supplies are stable, and reset is connected to all Slice Cards so any circuitry on them can be reset.
-It also indicates to the Slice Cards that their power input is stable. The reset from the XTAG resets the whole system, if required for debugging.
+
+
+It also indicates to the sliceCARDs that their power input is stable. The reset from the xTAG resets the whole system, if required for debugging.
 
 
 
@@ -247,7 +251,7 @@ There are two sources for the system clock: an on-board 25MHz oscillator or the 
 This means the system clock from a Master Core Board is fed automatically to all of the slave Core Boards so the whole system will operate synchronously.
 
 
-The system clock is also fed to each of the Slice Card Slots.
+The system clock is also fed to each of the sliceCARD Slots.
 
 
 
@@ -255,7 +259,9 @@ The system clock is also fed to each of the Slice Card Slots.
 \section{Testpoints}
 \label{a16_core_board:testpoints}\label{a16_core_board:sec-io-crossref}
 
-Each XCORE I/O signal is also available on a 0.1'' header, next to the Slot that it is connected to.
+Each xCORE I/O signal is also available on a 0.1'' header, next to the Slot that it is connected to.
+
+
 These connections can be used to connect an oscilloscope or logic analyser, or for interconnection of signals for advanced development work.
 
 
@@ -404,7 +410,7 @@ X1D43 & CIRCLE & A13 &  &  & P8D7 & P16B15 & \\
 \section{Slot pinouts}
 \label{a16_core_board:slot-pinouts}
 
-The signal assignments for the connectors on the Core Board and Slice Cards can be seen in the table below.
+The signal assignments for the connectors on the Core Board and sliceCARDs can be seen in the table below.
 
 
 
@@ -776,6 +782,8 @@ DEBUG is bidirectional.
 
 
 PRSNT is used on the \verb`Chain` Connector to detect it is plugged into the \verb`Square` Slot of another Core Board. This signal is used to switch JTAG and CLK sources.
+
+
 Similarly, PRSNT\_N is used on the \verb`Star` Slot to detect another Core Board is connected. This signal is used to switch the JTAG chain signals.
 
 
@@ -786,36 +794,36 @@ CLK and RST\_N are inputs to the Core Board from the \verb`Chain` Connector and 
 % NON-FULLWIDTH SECTION
 \clearpage
 \chapter{Slice Cards and Slots}
-\label{slice_cards:slice-cards-and-slots}\label{slice_cards::doc}%summary!
+\label{slice_cards:slicecards-and-slots}\label{slice_cards::doc}%summary!
 
 
-sliceKIT Slice Cards are used to implement peripheral circuitry as part of the sliceKIT platform.
+sliceKIT sliceCARDs are used to implement peripheral circuitry as part of the sliceKIT platform.
 
 
-Existing Slice Cards may connect to some or all of the \verb`Star`, \verb`Triangle`, \verb`Square` and \verb`Circle` slots. Their compatibility with each slot is indicated by the range of symbols printed on the Slice Card silkscreen. A Card having all four symbols is compatible with all slots, a subset of symbols indicates that some slots don't have sufficient I/O or suitable I/O resources to work with that Card.
+Existing sliceCARDs may connect to some or all of the \verb`Star`, \verb`Triangle`, \verb`Square` and \verb`Circle` slots. Their compatibility with each slot is indicated by the range of symbols printed on the sliceCARD silkscreen. A Card having all four symbols is compatible with all slots, a subset of symbols indicates that some slots don't have sufficient I/O or suitable I/O resources to work with that Card.
 
 
-\verb`Star` and \verb`Square` Slice Cards have 20 xCore Processor IOs including four 1-bit ports.
+\verb`Star` and \verb`Square` sliceCARDs have 20 xCORE Processor I/Os including four 1-bit ports.
 
 
-\verb`Triangle` and \verb`Circle` Slice Cards have 24 xCore Processor IOs including twelve 1-bit ports.
+\verb`Triangle` and \verb`Circle` sliceCARDs have 24 xCORE Processor I/Os including twelve 1-bit ports.
 
 
-A Double Slice Card is a board with two Slice Card finger connectors and connects to all of the IO on one Tile (e.g. to \verb`Star` + \verb`Triangle` or to \verb`Circle`  + \verb`Square`).
+A Double sliceCARD is a board with two sliceCARD finger connectors and connects to all of the I/O on one Tile (e.g. to \verb`Star` + \verb`Triangle` or to \verb`Circle`  + \verb`Square`).
 
 
-Note\attentionmargin  that Slice Cards compatible with a given slot may still have restrictions when used in that slot (typically less common or popular functionality may be disabled), so be sure to check the Slice Card documents for details).
+Note\attentionmargin  that sliceCARDs compatible with a given slot may still have restrictions when used in that slot (typically less common or popular functionality may be disabled), so be sure to check the sliceCARD documents for details).
 
 
 
 % NON-FULLWIDTH SECTION
 \clearpage
 \chapter{Designing a Slice Card}
-\label{design_your_own::doc}\label{design_your_own:designing-a-slice-card}%last summary
+\label{design_your_own:designing-a-slicecard}\label{design_your_own::doc}%last summary
 \begin{inthisdocument}
 \item \nameref{design_your_own:power}
-\item \nameref{design_your_own:signal-io}
-\item \nameref{design_your_own:slice-card-form-factors}
+\item \nameref{design_your_own:signal-i-o}
+\item \nameref{design_your_own:slicecard-form-factors}
 \item \nameref{design_your_own:connector-pinouts}
 \end{inthisdocument}
 
@@ -826,17 +834,21 @@ Note\attentionmargin  that Slice Cards compatible with a given slot may still ha
 \section{Power}
 \label{design_your_own:power}
 
-Slice Cards have two power supplies available to them, 5V and 3V3.
+sliceCARDs have two power supplies available to them, 5V and 3V3.
+
+
 The 5V supply can range from 4.75V to 5.25V (5\%) at a current of up to 0.25A per slice.
+
+
 The 3V3 supply can range from 3.13V to 3.47V (5\%) at a current of up to 0.25A per slice.
 
 
 
 % NON-FULLWIDTH SECTION
-\section{Signal IO}
-\label{design_your_own:signal-io}
+\section{Signal I/O}
+\label{design_your_own:signal-i-o}
 
-A single Slice Card connector has 36 contacts. The four types of slice have a number of common pins which are described below.
+A single sliceCARD connector has 36 contacts. The four types of slice have a number of common pins which are described below.
 \begin{itemize}
 \item   GND. Power supply ground.
 
@@ -854,46 +866,46 @@ A single Slice Card connector has 36 contacts. The four types of slice have a nu
 
 
 
-The other available pins are connected to xCore Processor IOs as shown in the pinout tables.
+The other available pins are connected to xCORE Processor I/Os as shown in the pinout tables.
 
 
-Slice Cards can take their power from either 5V or 3V3 or both. Slice Cards should draw no more than 250mA from each supply.
+sliceCARDs can take their power from either 5V or 3V3 or both. sliceCARDs should draw no more than 250mA from each supply.
 
 
 At system power-on, the 5V supply will power up first, followed by the 3V3 supply. The system reset signal will de-assert a short time after this.
 
 
-Due to the constraints on the sliceKIT Core Board, there are some ports on the Slice Cards which should be used in preference to others. These constraints are as follows:
+Due to the constraints on the sliceKIT Core Board, there are some ports on the sliceCARDs which should be used in preference to others. These constraints are as follows:
 \begin{itemize}
-\item   X0D4-7 can be selected for use as the XScope XMOS Link
+\item   X0D4-7 can be selected for use as the xSCOPE xCONNECT Link
 
-\item   X0D0,1,10,11 could be used for SPI boot on a master core board. These pins will be hi-z when booting and can be transferred to the XCore IO signals when boot is complete.
+\item   X0D0,1,10,11 could be used for SPI boot on a master core board. These pins will be hi-z when booting and can be transferred to the xCORE I/O signals when boot is complete.
 
 \end{itemize}
 
 
 
-For Slice Cards intended for use in the \verb`Star` Slot, P4B should be avoided with the knowledge that using it means XScope can not be used if the Slice Card is plugged into the \verb`Star` Slot.
+For sliceCARDs intended for use in the \verb`Star` Slot, P4B should be avoided with the knowledge that using it means xSCOPE can not be used if the sliceCARD is plugged into the \verb`Star` Slot.
 
 
 
 % NON-FULLWIDTH SECTION
-\section{Slice Card Form Factors}
-\label{design_your_own:slice-card-form-factors}
+\section{sliceCARD Form Factors}
+\label{design_your_own:slicecard-form-factors}
 
-The Slice Cards use a standard PCIe x1 edge finger to connect to the sliceKIT Core Board. Because of this, all Slice Card PCBs must be 1.6mm thick.
+The sliceCARDs use a standard PCIe x1 edge finger to connect to the sliceKIT Core Board. Because of this, all sliceCARD PCBs must be 1.6mm thick.
 
 
-There is no hard specification as to the length of Slice Cards as this poses no mechanical clashing hazard, however to avoid clashing with other Slice Cards or the power input connector Slice Cards should be limited to 40mm wide.
+There is no hard specification as to the length of sliceCARDs as this poses no mechanical clashing hazard, however to avoid clashing with other sliceCARDs or the power input connector sliceCARDs should be limited to 40mm wide.
 
 
 Four mounting holes are specified in the corners of the slice for mechanical stability. These should be used with 6mm standoffs, example part Toby Electronics DCB-6.
 
 
-An optional retention hole is specified for use in securing the Slice Card to the sliceKIT Core Board. This is useful to ensure the Slice Cards is not accidentally unplugged when using the system.
-Typical usage uses a 2.54mm cable tie between this hole and the associated hole in the sliceKIT Core Board ensuring the Slice Card cannot be unplugged.
+An optional retention hole is specified for use in securing the sliceCARD to the sliceKIT Core Board. This is useful to ensure the sliceCARDs is not accidentally unplugged when using the system.
+Typical usage uses a 2.54mm cable tie between this hole and the associated hole in the sliceKIT Core Board ensuring the sliceCARD cannot be unplugged.
 \begin{figure}[h]
-\begin{sidecaption}{Slice Card Detail}
+\begin{sidecaption}{sliceCARD Detail}
 
 \includegraphics[width=0.700\linewidth]{slicecarddetail.pdf}
 \end{sidecaption}\end{figure} \DocumentFooterFix
@@ -907,7 +919,7 @@ Note that for quick, low cost boards using low cost PCB manufacturing, the chamf
 \section{Connector Pinouts}
 \label{design_your_own:connector-pinouts}
 
-The pinouts of the four types of Slice Card are shown below. To cross reference pin numbers (eg. X0D1) to port names, see~here (see~\Sec~\ref{a16_core_board:sec-io-crossref}):
+The pinouts of the four types of sliceCARD are shown below. To cross reference pin numbers (eg. X0D1) to port names, see~here (see~\Sec~\ref{a16_core_board:sec-io-crossref}):
 
 
 
