@@ -1,4 +1,6 @@
-A16 sliceKIT Hardware Manual
+.. _xcore_analog_slicekit_hardware_manual:
+
+xCORE-Analog sliceKIT Hardware Manual
 -----------------------------------------
 
 .. toctree::
